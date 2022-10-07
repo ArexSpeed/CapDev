@@ -5,115 +5,75 @@ import Link from 'next/link';
 // import { signOut } from 'next-auth/client';
 import { useRouter } from 'next/router';
 // eslint-disable-next-line prettier/prettier
-import {
-  BlogIcon,
-  CommunityIcon,
-  EventIcon,
-  HomeIcon,
-  LogoutIcon,
-  ProfileIcon,
-  ProjectIcon,
-  QuizIcon,
-  SunIcon,
-  MoonIcon
-} from '../Icons/FontIcons';
+import { CommunityIcon, HomeIcon, LogoutIcon, ProfileIcon, ProjectIcon } from '../Icons/FontIcons';
+
+const iconsStyle = 'ml-2 w-[24px] h-[24px] text-blue';
+const itemStyle = 'flex w-full justify-center';
+const linkStyle = 'mt-2.5  flex items-center w-[213px] h-[40px] rounded-lg hover:bg-lightblue';
+const linkActiveStyle = 'mt-2.5 flex items-center w-[213px] h-[40px] bg-lightblue rounded-lg';
+const spanStyle = 'ml-2.5 text-xl';
 
 export const Navigation = () => {
   // const [session] = useSession();
   const router = useRouter();
-  const toggleThemeRef = useRef();
-
-  // const toggleTheme = () => {
-  //   toggleThemeRef.current.checked
-  //     ? document.documentElement.setAttribute('data-theme', 'dark')
-  //     : document.documentElement.setAttribute('data-theme', '');
-  // };
-
-  // useEffect(() => {
-  //   if (currentTheme) {
-  //     document.documentElement.setAttribute('data-theme', currentTheme);
-  //     if (currentTheme === 'dark') {
-  //       toggleThemeRef.current.checked = true;
-  //     }
-  //   }
-  // }, []);
 
   return (
-    <nav className="nav">
-      <ul className="nav__list">
-        <li className="nav__item">
+    <nav className="flex justify-between flex-col w-[256px] fixed">
+      <ul>
+        <li className={itemStyle}>
           <Link href="/" passHref>
-            <a className={router.pathname === '/' ? 'nav__link active' : 'nav__link'}>
-              <HomeIcon className="icon-medium secondary-blue" />
-              <span>Home</span>
+            <a className={router.pathname === '/' ? `${linkActiveStyle}` : `${linkStyle}`}>
+              <HomeIcon className={iconsStyle} />
+              <span className={spanStyle}>Home</span>
             </a>
           </Link>
         </li>
-        <li className="nav__item">
+        <li className={itemStyle}>
           <Link href="/community" passHref>
-            <a className={router.pathname === '/community' ? 'nav__link active' : 'nav__link'}>
-              <CommunityIcon className="icon-medium secondary-blue" />
-              <span>Community</span>
+            <a className={router.pathname === '/community' ? `${linkActiveStyle}` : `${linkStyle}`}>
+              <CommunityIcon className={iconsStyle} />
+              <span className={spanStyle}>Community</span>
             </a>
           </Link>
         </li>
-        <li className="nav__item">
+        {/* <li className={itemStyle}>
           <Link href="/blog" passHref>
-            <a className={router.pathname === '/blog' ? 'nav__link active' : 'nav__link'}>
-              <BlogIcon className="icon-medium secondary-blue" />
-              <span>Blog</span>
+            <a className={router.pathname === '/blog' ? `${linkActiveStyle}` : `${linkStyle}`}>
+              <BlogIcon className={iconsStyle} />
+              <span className={spanStyle}>Blog</span>
             </a>
           </Link>
-        </li>
-        <li className="nav__item">
+        </li> */}
+        {/* <li className={itemStyle}>
           <Link href="/events" passHref>
-            <a className={router.pathname === '/events' ? 'nav__link active' : 'nav__link'}>
-              <EventIcon className="icon-medium secondary-blue" />
-              <span>Events</span>
+            <a className={router.pathname === '/events' ? `${linkActiveStyle}` : `${linkStyle}`}>
+              <EventIcon className={iconsStyle} />
+              <span className={spanStyle}>Events</span>
             </a>
           </Link>
-        </li>
-        <li className="nav__item">
+        </li> */}
+        <li className={itemStyle}>
           <Link href="/projects" passHref>
-            <a className={router.pathname === '/projects' ? 'nav__link active' : 'nav__link'}>
-              <ProjectIcon className="icon-medium secondary-blue" />
-              <span>Projects</span>
+            <a className={router.pathname === '/projects' ? `${linkActiveStyle}` : `${linkStyle}`}>
+              <ProjectIcon className={iconsStyle} />
+              <span className={spanStyle}>Projects</span>
             </a>
           </Link>
         </li>
-        <li className="nav__item">
-          <Link href="/quiz" passHref>
-            <a className={router.pathname === '/quiz' ? 'nav__link active' : 'nav__link'}>
-              <QuizIcon className="icon-medium secondary-blue" />
-              <span>Quiz</span>
-            </a>
-          </Link>
-        </li>
-        <li className="nav__item">
+        <li className={itemStyle}>
           <Link href="/profile" passHref>
-            <a className={router.pathname === '/profile' ? 'nav__link active' : 'nav__link'}>
-              <ProfileIcon className="icon-medium secondary-blue" />
-              <span>Profile</span>
+            <a className={router.pathname === '/profile' ? `${linkActiveStyle}` : `${linkStyle}`}>
+              <ProfileIcon className={iconsStyle} />
+              <span className={spanStyle}>Profile</span>
             </a>
           </Link>
         </li>
       </ul>
-      <ul className="nav__list">
-        <li className="nav__item">
-          <SunIcon className="icon-medium secondary-blue nav__switch-icon" />
-          <label className="nav__switch">
-            <input
-              type="checkbox"
-              // ref={toggleThemeRef} onChange={toggleTheme}
-            />
-            <span className="slider round"></span>
-          </label>
-          <MoonIcon className="icon-medium secondary-blue nav__switch-icon" />
-        </li>
+      <ul className="mt-10">
         {/* {session && ( */}
-        // eslint-disable-next-line jsx-a11y/click-events-have-key-events
+
         <li
-          className="nav__item"
+          className={itemStyle}
           // onClick={() =>
           //   signOut({
           //     callbackUrl: `/`
@@ -121,9 +81,9 @@ export const Navigation = () => {
           // }
         >
           <Link href="/" passHref>
-            <a className="nav__link">
-              <LogoutIcon className="icon-medium secondary-blue" />
-              <span>Logout</span>
+            <a className={linkStyle}>
+              <LogoutIcon className={iconsStyle} />
+              <span className={spanStyle}>Logout</span>
             </a>
           </Link>
         </li>
