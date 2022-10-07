@@ -6,7 +6,7 @@
   https://github.com/lipis/flag-icons/tree/main/flags/4x3
  */
 
-export const HtmlIcon = ({ className = 'icon-medium' }) => (
+export const HtmlIcon = ({ className = 'w-6 h-6 text-blue-600' }) => (
   <svg
     className={className}
     fill="currentColor"
@@ -16,7 +16,7 @@ export const HtmlIcon = ({ className = 'icon-medium' }) => (
   </svg>
 );
 
-export const CssIcon = ({ className = 'icon-medium' }) => (
+export const CssIcon = ({ className = 'w-6 h-6 text-blue-600' }) => (
   <svg
     className={className}
     fill="currentColor"
@@ -26,7 +26,7 @@ export const CssIcon = ({ className = 'icon-medium' }) => (
   </svg>
 );
 
-export const SassIcon = ({ className = 'icon-medium' }) => (
+export const SassIcon = ({ className = 'w-6 h-6 text-blue-600' }) => (
   <svg
     className={className}
     fill="currentColor"
@@ -36,7 +36,7 @@ export const SassIcon = ({ className = 'icon-medium' }) => (
   </svg>
 );
 
-export const ReactIcon = ({ className = 'icon-medium' }) => (
+export const ReactIcon = ({ className = 'w-6 h-6 text-blue-600' }) => (
   <svg
     className={className}
     fill="currentColor"
@@ -46,7 +46,7 @@ export const ReactIcon = ({ className = 'icon-medium' }) => (
   </svg>
 );
 
-export const JavaScriptIcon = ({ className = 'icon-medium' }) => (
+export const JavaScriptIcon = ({ className = 'w-6 h-6 text-blue-600' }) => (
   <svg
     className={className}
     fill="currentColor"
@@ -56,7 +56,7 @@ export const JavaScriptIcon = ({ className = 'icon-medium' }) => (
   </svg>
 );
 
-export const TypeScriptIcon = ({ className = 'icon-medium' }) => (
+export const TypeScriptIcon = ({ className = 'w-6 h-6 text-blue-600' }) => (
   <svg
     className={className}
     fill="currentColor"
@@ -66,7 +66,7 @@ export const TypeScriptIcon = ({ className = 'icon-medium' }) => (
   </svg>
 );
 
-export const TailwindIcon = ({ className = 'icon-medium' }) => (
+export const TailwindIcon = ({ className = 'w-6 h-6 text-blue-600' }) => (
   <svg
     className={className}
     fill="currentColor"
@@ -76,7 +76,7 @@ export const TailwindIcon = ({ className = 'icon-medium' }) => (
   </svg>
 );
 
-export const NodeIcon = ({ className = 'icon-medium' }) => (
+export const NodeIcon = ({ className = 'w-6 h-6 text-blue-600' }) => (
   <svg
     className={className}
     fill="currentColor"
@@ -86,7 +86,7 @@ export const NodeIcon = ({ className = 'icon-medium' }) => (
   </svg>
 );
 
-export const NextIcon = ({ className = 'icon-medium' }) => (
+export const NextIcon = ({ className = 'w-6 h-6 text-blue-600' }) => (
   <svg
     className={className}
     fill="currentColor"
@@ -96,7 +96,7 @@ export const NextIcon = ({ className = 'icon-medium' }) => (
   </svg>
 );
 
-export const AngularIcon = ({ className = 'icon-medium' }) => (
+export const AngularIcon = ({ className = 'w-6 h-6 text-blue-600' }) => (
   <svg
     className={className}
     fill="currentColor"
@@ -106,7 +106,7 @@ export const AngularIcon = ({ className = 'icon-medium' }) => (
   </svg>
 );
 
-export const CSharpcon = ({ className = 'icon-medium' }) => (
+export const CSharpcon = ({ className = 'w-6 h-6 text-blue-600' }) => (
   <svg
     className={className}
     fill="currentColor"
@@ -116,7 +116,7 @@ export const CSharpcon = ({ className = 'icon-medium' }) => (
   </svg>
 );
 
-export const CPlusIcon = ({ className = 'icon-medium' }) => (
+export const CPlusIcon = ({ className = 'w-6 h-6 text-blue-600' }) => (
   <svg
     className={className}
     fill="currentColor"
@@ -126,7 +126,7 @@ export const CPlusIcon = ({ className = 'icon-medium' }) => (
   </svg>
 );
 
-export const PhpIcon = ({ className = 'icon-medium' }) => (
+export const PhpIcon = ({ className = 'w-6 h-6 text-blue-600' }) => (
   <svg
     className={className}
     fill="currentColor"
@@ -136,7 +136,7 @@ export const PhpIcon = ({ className = 'icon-medium' }) => (
   </svg>
 );
 
-export const DrupalIcon = ({ className = 'icon-medium' }) => (
+export const DrupalIcon = ({ className = 'w-6 h-6 text-blue-600' }) => (
   <svg
     className={className}
     fill="currentColor"
@@ -146,7 +146,7 @@ export const DrupalIcon = ({ className = 'icon-medium' }) => (
   </svg>
 );
 
-export const JavaIcon = ({ className = 'icon-medium' }) => (
+export const JavaIcon = ({ className = 'w-6 h-6 text-blue-600' }) => (
   <svg
     className={className}
     fill="currentColor"
@@ -156,7 +156,7 @@ export const JavaIcon = ({ className = 'icon-medium' }) => (
   </svg>
 );
 
-export const PythonIcon = ({ className = 'icon-medium' }) => (
+export const PythonIcon = ({ className = 'w-6 h-6 text-blue-600' }) => (
   <svg
     className={className}
     fill="currentColor"
@@ -166,7 +166,7 @@ export const PythonIcon = ({ className = 'icon-medium' }) => (
   </svg>
 );
 
-export const PostgresIcon = ({ className = 'icon-medium' }) => (
+export const PostgresIcon = ({ className = 'w-6 h-6 text-blue-600' }) => (
   <svg
     className={className}
     fill="currentColor"
@@ -176,7 +176,7 @@ export const PostgresIcon = ({ className = 'icon-medium' }) => (
   </svg>
 );
 
-export const MongoIcon = ({ className = 'icon-medium' }) => (
+export const MongoIcon = ({ className = 'w-6 h-6 text-blue-600' }) => (
   <svg
     className={className}
     fill="currentColor"
@@ -186,7 +186,7 @@ export const MongoIcon = ({ className = 'icon-medium' }) => (
   </svg>
 );
 
-export const WordpressIcon = ({ className = 'icon-medium' }) => (
+export const WordpressIcon = ({ className = 'w-6 h-6 text-blue-600' }) => (
   <svg
     className={className}
     fill="currentColor"
@@ -196,7 +196,7 @@ export const WordpressIcon = ({ className = 'icon-medium' }) => (
   </svg>
 );
 
-export const NetIcon = ({ className = 'icon-medium' }) => (
+export const NetIcon = ({ className = 'w-6 h-6 text-blue-600' }) => (
   <svg
     className={className}
     fill="currentColor"

@@ -1,4 +1,4 @@
-export const WebsiteIcon = ({ className = 'icon-medium' }) => (
+export const WebsiteIcon = ({ className = 'w-6 h-6 text-blue-600' }) => (
   <svg
     className={className}
     fill="currentColor"
@@ -12,7 +12,7 @@ export const WebsiteIcon = ({ className = 'icon-medium' }) => (
   </svg>
 );
 
-export const FacebookIcon = ({ className = 'icon-medium' }) => (
+export const FacebookIcon = ({ className = 'w-6 h-6 text-blue-600' }) => (
   <svg
     className={className}
     fill="currentColor"
@@ -23,7 +23,7 @@ export const FacebookIcon = ({ className = 'icon-medium' }) => (
   </svg>
 );
 
-export const LinkedinIcon = ({ className = 'icon-medium' }) => (
+export const LinkedinIcon = ({ className = 'w-6 h-6 text-blue-600' }) => (
   <svg
     className={className}
     fill="currentColor"
@@ -33,7 +33,7 @@ export const LinkedinIcon = ({ className = 'icon-medium' }) => (
   </svg>
 );
 
-export const TwitterIcon = ({ className = 'icon-medium' }) => (
+export const TwitterIcon = ({ className = 'w-6 h-6 text-blue-600' }) => (
   <svg
     className={className}
     fill="currentColor"
@@ -43,7 +43,7 @@ export const TwitterIcon = ({ className = 'icon-medium' }) => (
   </svg>
 );
 
-export const GithubIcon = ({ className = 'icon-medium' }) => (
+export const GithubIcon = ({ className = 'w-6 h-6 text-blue-600' }) => (
   <svg
     className={className}
     fill="currentColor"
@@ -53,7 +53,7 @@ export const GithubIcon = ({ className = 'icon-medium' }) => (
   </svg>
 );
 
-export const DribbbleIcon = ({ className = 'icon-medium' }) => (
+export const DribbbleIcon = ({ className = 'w-6 h-6 text-blue-600' }) => (
   <svg
     className={className}
     fill="currentColor"

@@ -1,4 +1,4 @@
-export const GermanyIcon = ({ className = 'icon-medium' }) => (
+export const GermanyIcon = ({ className = 'w-6 h-6' }) => (
   <svg className={className} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
     <path fill="#ffce00" d="M0 341.3h512V512H0z" />
     <path d="M0 0h512v170.7H0z" />
@@ -6,7 +6,7 @@ export const GermanyIcon = ({ className = 'icon-medium' }) => (
   </svg>
 );
 
-export const BritainIcon = ({ className = 'icon-medium' }) => (
+export const BritainIcon = ({ className = 'w-6 h-6' }) => (
   <svg className={className} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
     <path fill="#012169" d="M0 0h512v512H0z" />
     <path
@@ -22,7 +22,7 @@ export const BritainIcon = ({ className = 'icon-medium' }) => (
   </svg>
 );
 
-export const PolandIcon = ({ className = 'icon-medium' }) => (
+export const PolandIcon = ({ className = 'w-6 h-6' }) => (
   <svg className={className} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
     <g fillRule="evenodd">
       <path fill="#fff" d="M512 512H0V0h512z" />
@@ -31,7 +31,7 @@ export const PolandIcon = ({ className = 'icon-medium' }) => (
   </svg>
 );
 
-export const FranceIcon = ({ className = 'icon-medium' }) => (
+export const FranceIcon = ({ className = 'w-6 h-6' }) => (
   <svg className={className} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
     <g fillRule="evenodd" strokeWidth="1pt">
       <path fill="#fff" d="M0 0h512v512H0z" />
@@ -41,7 +41,7 @@ export const FranceIcon = ({ className = 'icon-medium' }) => (
   </svg>
 );
 
-export const UkraineIcon = ({ className = 'icon-medium' }) => (
+export const UkraineIcon = ({ className = 'w-6 h-6' }) => (
   <svg className={className} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
     <g fillRule="evenodd" strokeWidth="1pt">
       <path fill="#ffd700" d="M0 0h512v512H0z" />
@@ -50,7 +50,7 @@ export const UkraineIcon = ({ className = 'icon-medium' }) => (
   </svg>
 );
 
-export const ItalyIcon = ({ className = 'icon-medium' }) => (
+export const ItalyIcon = ({ className = 'w-6 h-6' }) => (
   <svg className={className} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
     <g fillRule="evenodd" strokeWidth="1pt">
       <path fill="#fff" d="M0 0h512v512H0z" />
