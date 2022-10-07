@@ -11,9 +11,9 @@ export const Layout: FC<Props> = ({ children }) => {
   return (
     <div>
       <Header />
-      <div className="container">
+      <div className="flex  w-full h-full">
         <Navigation />
-        <main className="main">{children}</main>
+        <main className="flex bg-slate-300 text-black ml-[256px] w-full h-full ">{children}</main>
       </div>
     </div>
   );
