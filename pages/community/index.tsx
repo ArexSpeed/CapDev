@@ -1,7 +1,11 @@
-import React from "react";
+import CommunityCard from 'components/Community/communitycard';
 
 const CommunityPage = () => {
-  return <div>CommunityPage</div>;
+  return (
+    <div>
+      <CommunityCard />
+    </div>
+  );
 };
 
 export default CommunityPage;
