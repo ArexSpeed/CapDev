@@ -10,7 +10,7 @@ interface IconProps {
   className?: string;
 }
 
-export const BookmarkIcon = ({ className = 'icon-medium' }: IconProps) => (
+export const BookmarkIcon = ({ className = 'w-6 h-6 text-sky-300' }: IconProps) => (
   <svg
     className={className}
     fill="currentColor"
@@ -20,7 +20,7 @@ export const BookmarkIcon = ({ className = 'icon-medium' }: IconProps) => (
   </svg>
 );
 
-export const BookmarkOutlineIcon = ({ className = 'icon-medium' }: IconProps) => (
+export const BookmarkOutlineIcon = ({ className = 'w-6 h-6 text-sky-300' }: IconProps) => (
   <svg
     className={className}
     fill="none"
@@ -36,7 +36,7 @@ export const BookmarkOutlineIcon = ({ className = 'icon-medium' }: IconProps) =>
   </svg>
 );
 
-export const NotificationIcon = ({ className = 'icon-medium' }: IconProps) => (
+export const NotificationIcon = ({ className = 'w-6 h-6 text-sky-300' }: IconProps) => (
   <svg
     className={className}
     fill="currentColor"
@@ -46,7 +46,7 @@ export const NotificationIcon = ({ className = 'icon-medium' }: IconProps) => (
   </svg>
 );
 
-export const HomeIcon = ({ className = 'icon-medium' }: IconProps) => (
+export const HomeIcon = ({ className = 'w-6 h-6 text-sky-300' }: IconProps) => (
   <svg
     className={className}
     fill="currentColor"
@@ -56,7 +56,7 @@ export const HomeIcon = ({ className = 'icon-medium' }: IconProps) => (
   </svg>
 );
 
-export const CommunityIcon = ({ className = 'icon-medium' }) => (
+export const CommunityIcon = ({ className = 'w-6 h-6 text-sky-300' }) => (
   <svg
     className={className}
     fill="currentColor"
@@ -66,7 +66,7 @@ export const CommunityIcon = ({ className = 'icon-medium' }) => (
   </svg>
 );
 
-export const UsersIcon = ({ className = 'icon-medium' }: IconProps) => (
+export const UsersIcon = ({ className = 'w-6 h-6 text-sky-300' }: IconProps) => (
   <svg
     className={className}
     fill="currentColor"
@@ -76,7 +76,7 @@ export const UsersIcon = ({ className = 'icon-medium' }: IconProps) => (
   </svg>
 );
 
-export const UserIcon = ({ className = 'icon-medium' }: IconProps) => (
+export const UserIcon = ({ className = 'w-6 h-6 text-sky-300' }: IconProps) => (
   <svg
     className={className}
     fill="currentColor"
@@ -90,7 +90,7 @@ export const UserIcon = ({ className = 'icon-medium' }: IconProps) => (
   </svg>
 );
 
-export const BlogIcon = ({ className = 'icon-medium' }: IconProps) => (
+export const BlogIcon = ({ className = 'w-6 h-6 text-sky-300' }: IconProps) => (
   <svg
     className={className}
     fill="currentColor"
@@ -100,7 +100,7 @@ export const BlogIcon = ({ className = 'icon-medium' }: IconProps) => (
   </svg>
 );
 
-export const EventIcon = ({ className = 'icon-medium' }: IconProps) => (
+export const EventIcon = ({ className = 'w-6 h-6 text-sky-300' }: IconProps) => (
   <svg
     className={className}
     fill="currentColor"
@@ -114,7 +114,7 @@ export const EventIcon = ({ className = 'icon-medium' }: IconProps) => (
   </svg>
 );
 
-export const ProjectIcon = ({ className = 'icon-medium' }: IconProps) => (
+export const ProjectIcon = ({ className = 'w-6 h-6 text-sky-300' }: IconProps) => (
   <svg
     className={className}
     fill="currentColor"
@@ -124,7 +124,7 @@ export const ProjectIcon = ({ className = 'icon-medium' }: IconProps) => (
   </svg>
 );
 
-export const QuizIcon = ({ className = 'icon-medium' }: IconProps) => (
+export const QuizIcon = ({ className = 'w-6 h-6 text-sky-300' }: IconProps) => (
   <svg
     className={className}
     fill="currentColor"
@@ -139,7 +139,7 @@ export const QuizIcon = ({ className = 'icon-medium' }: IconProps) => (
   </svg>
 );
 
-export const ProfileIcon = ({ className = 'icon-medium' }: IconProps) => (
+export const ProfileIcon = ({ className = 'w-6 h-6 text-sky-300' }: IconProps) => (
   <svg
     className={className}
     fill="currentColor"
@@ -153,7 +153,7 @@ export const ProfileIcon = ({ className = 'icon-medium' }: IconProps) => (
   </svg>
 );
 
-export const LogoutIcon = ({ className = 'icon-medium' }: IconProps) => (
+export const LogoutIcon = ({ className = 'w-6 h-6 text-sky-300' }: IconProps) => (
   <svg
     className={className}
     fill="currentColor"
@@ -167,7 +167,7 @@ export const LogoutIcon = ({ className = 'icon-medium' }: IconProps) => (
   </svg>
 );
 
-export const SearchIcon = ({ className = 'icon-medium' }: IconProps) => (
+export const SearchIcon = ({ className = 'w-6 h-6 text-sky-300' }: IconProps) => (
   <svg
     className={className}
     fill="currentColor"
@@ -181,7 +181,7 @@ export const SearchIcon = ({ className = 'icon-medium' }: IconProps) => (
   </svg>
 );
 
-export const ChevronRight = ({ className = 'icon-medium' }: IconProps) => (
+export const ChevronRight = ({ className = 'w-6 h-6 text-sky-300' }: IconProps) => (
   <svg
     className={className}
     fill="currentColor"
@@ -193,7 +193,7 @@ export const ChevronRight = ({ className = 'icon-medium' }: IconProps) => (
       clipRule="evenodd"></path>
   </svg>
 );
-export const ChevronDoubleDown = ({ className = 'icon-medium' }: IconProps) => (
+export const ChevronDoubleDown = ({ className = 'w-6 h-6 text-sky-300' }: IconProps) => (
   <svg
     className={className}
     fill="currentColor"
@@ -206,7 +206,7 @@ export const ChevronDoubleDown = ({ className = 'icon-medium' }: IconProps) => (
     />
   </svg>
 );
-export const HeartIcon = ({ className = 'icon-medium' }: IconProps) => (
+export const HeartIcon = ({ className = 'w-6 h-6 text-sky-300' }: IconProps) => (
   <svg
     className={className}
     fill="none"
@@ -221,7 +221,7 @@ export const HeartIcon = ({ className = 'icon-medium' }: IconProps) => (
     />
   </svg>
 );
-export const HeartOutlineIcon = ({ className = 'icon-medium' }: IconProps) => (
+export const HeartOutlineIcon = ({ className = 'w-6 h-6 text-sky-300' }: IconProps) => (
   <svg
     className={className}
     fill="currentColor"
@@ -233,7 +233,7 @@ export const HeartOutlineIcon = ({ className = 'icon-medium' }: IconProps) => (
       clipRule="evenodd"></path>
   </svg>
 );
-export const CommentIcon = ({ className = 'icon-medium' }: IconProps) => (
+export const CommentIcon = ({ className = 'w-6 h-6 text-sky-300' }: IconProps) => (
   <svg
     className={className}
     fill="currentColor"
@@ -245,7 +245,7 @@ export const CommentIcon = ({ className = 'icon-medium' }: IconProps) => (
       clipRule="evenodd"></path>
   </svg>
 );
-export const TimeIcon = ({ className = 'icon-medium' }: IconProps) => (
+export const TimeIcon = ({ className = 'w-6 h-6 text-sky-300' }: IconProps) => (
   <svg
     className={className}
     fill="none"
@@ -260,7 +260,7 @@ export const TimeIcon = ({ className = 'icon-medium' }: IconProps) => (
     />
   </svg>
 );
-export const TagIcon = ({ className = 'icon-medium' }: IconProps) => (
+export const TagIcon = ({ className = 'w-6 h-6 text-sky-300' }: IconProps) => (
   <svg
     className={className}
     fill="currentColor"
@@ -273,7 +273,7 @@ export const TagIcon = ({ className = 'icon-medium' }: IconProps) => (
     />
   </svg>
 );
-export const SunIcon = ({ className = 'icon-medium' }: IconProps) => (
+export const SunIcon = ({ className = 'w-6 h-6 text-sky-300' }: IconProps) => (
   <svg
     className={className}
     fill="currentColor"
@@ -286,7 +286,7 @@ export const SunIcon = ({ className = 'icon-medium' }: IconProps) => (
     />
   </svg>
 );
-export const MoonIcon = ({ className = 'icon-medium' }: IconProps) => (
+export const MoonIcon = ({ className = 'w-6 h-6 text-sky-300' }: IconProps) => (
   <svg
     className={className}
     fill="currentColor"
