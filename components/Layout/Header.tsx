@@ -8,6 +8,8 @@ import { useState, useEffect } from 'react';
 
 import photo from '../../assets/my-photo.jpg';
 
+const iconsStyle = 'text-blue w-[24px] h-[24px]';
+
 export const Header = () => {
   //   const [session] = useSession();
   const [bookmarkHover, setBookmarkHover] = useState(false);
@@ -21,30 +23,30 @@ export const Header = () => {
   //   }, [session]);
 
   return (
-    <header className="header">
-      <div className="header__logo">
+    <header className="flex justify-between w-full p-2.5">
+      <div className="flex justify-center items-center ">
         <Image src={logo} width={40} height={40} alt="logo" />
-        <span>CapDev</span>
+        <span className="text-2xl font-medium ml-2.5">CapDev</span>
       </div>
-      <div className="header__actions">
+      <div className="flex items-center w-[200px] justify-between">
         <Link href="/bookmarks" passHref>
           <a
             onMouseEnter={() => setBookmarkHover(true)}
             onMouseLeave={() => setBookmarkHover(false)}>
             {!bookmarkHover ? (
-              <BookmarkIcon className="header__actions-icon icon-medium primary-blue" />
+              <BookmarkIcon className={iconsStyle} />
             ) : (
-              <BookmarkOutlineIcon className="header__actions-icon icon-medium primary-blue" />
+              <BookmarkOutlineIcon className={iconsStyle} />
             )}
           </a>
         </Link>
         <Link href="/notifications" passHref>
           <a>
-            <NotificationIcon className="header__actions-icon icon-medium primary-blue" />
+            <NotificationIcon className={iconsStyle} />
           </a>
         </Link>
-        <div className="header__actions-user">
-          <span>Arek Cichocki</span>
+        <div className="flex items-center ">
+          <span className="mr-2">Arek Cichocki</span>
           <Image src={photo} width={40} height={40} objectFit="contain" alt="" />
         </div>
       </div>

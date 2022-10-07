@@ -1,9 +1,11 @@
-import React, { useState } from 'react';
+import ProjectCard from 'components/Projects/projectcard';
+import React from 'react';
 
 const ProfilePage = () => {
   return (
     <div className="flex flex-col">
       <div className="flex flex-row w-full">
+        <ProjectCard />
         <div>
           <div className="">Picture</div>
           <div className="">socials</div>
@@ -30,6 +32,8 @@ const ProfilePage = () => {
       <div className="flex flex-row experienceEducation">
         <div className="experience">
           <h4>Experience</h4>
+          <ProjectCard />
+          <ProjectCard />
         </div>
         <div className="education">
           <h4>Education</h4>
