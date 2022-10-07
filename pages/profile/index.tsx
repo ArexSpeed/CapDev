@@ -4,7 +4,6 @@ import React from "react";
 const ProfilePage = () => {
   return <div className="flex flex-col">
     <div className="flex flex-row w-full" >
-    <ProjectCard/>
   <div >
     <div className="">
       Picture
@@ -37,16 +36,21 @@ const ProfilePage = () => {
     <div className="experienceEducation flex flex-row">
     <div className="experience">
       <h4>Experience</h4>
-      <ProjectCard/>
-      <ProjectCard/>
+      
     </div>
     <div className="education">
       <h4>Education</h4>
     </div>
     </div>
-    <div className="projects">
-      <h4>Projects</h4>
+    <div className="gap-x-5 gap-y-5">
+      <h4 className="gap-x-5 gap-y-5">Projects</h4>
+      <div className=" flex gap-x-5 gap-y-5">
 
+      <ProjectCard/>
+      <ProjectCard/>
+      <ProjectCard/>
+      <ProjectCard/>
+      </div>
     </div>
   </div>
 };
