@@ -8,7 +8,7 @@ import { useState, useEffect } from 'react';
 
 import photo from '../../assets/my-photo.jpg';
 
-const iconsStyle = 'text-[#0072AF] w-[24px] h-[24px]';
+const iconsStyle = 'text-blue w-[24px] h-[24px]';
 
 export const Header = () => {
   //   const [session] = useSession();

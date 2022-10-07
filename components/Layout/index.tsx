@@ -13,7 +13,7 @@ export const Layout: FC<Props> = ({ children }) => {
       <Header />
       <div className="flex w-full h-full">
         <Navigation />
-        <main className="flex bg-slate-300 text-black ml-[256px] w-full h-full ">{children}</main>
+        <main className="flex bg-secondary text-black ml-[256px] w-full h-full ">{children}</main>
       </div>
     </div>
   );

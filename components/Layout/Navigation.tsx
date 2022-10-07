@@ -5,28 +5,17 @@ import Link from 'next/link';
 // import { signOut } from 'next-auth/client';
 import { useRouter } from 'next/router';
 // eslint-disable-next-line prettier/prettier
-import {
-  BlogIcon,
-  CommunityIcon,
-  EventIcon,
-  HomeIcon,
-  LogoutIcon,
-  ProfileIcon,
-  ProjectIcon,
-  SunIcon,
-  MoonIcon
-} from '../Icons/FontIcons';
+import { CommunityIcon, HomeIcon, LogoutIcon, ProfileIcon, ProjectIcon } from '../Icons/FontIcons';
 
-const iconsStyle = 'ml-2 w-[24px] h-[24px] text-[#0072AF]';
+const iconsStyle = 'ml-2 w-[24px] h-[24px] text-blue';
 const itemStyle = 'flex w-full justify-center';
-const linkStyle = 'mt-2.5  flex items-center w-[213px] h-[40px] rounded-lg hover:bg-[#17ABDB]';
-const linkActiveStyle = 'mt-2.5 flex items-center w-[213px] h-[40px] bg-[#17ABDB] rounded-lg';
+const linkStyle = 'mt-2.5  flex items-center w-[213px] h-[40px] rounded-lg hover:bg-lightblue';
+const linkActiveStyle = 'mt-2.5 flex items-center w-[213px] h-[40px] bg-lightblue rounded-lg';
 const spanStyle = 'ml-2.5 text-xl';
 
 export const Navigation = () => {
   // const [session] = useSession();
   const router = useRouter();
-  const toggleThemeRef = useRef();
 
   return (
     <nav className="flex justify-between flex-col w-[256px] fixed">
