@@ -4,7 +4,7 @@ import { FacebookIcon, LinkedinIcon, TwitterIcon } from 'components/Icons/Social
 
 function CommunityCard() {
   return (
-    <div className="max-w-sm p-6 bg-white border border-gray-200 rounded-lg shadow-m">
+    <div className="w-full p-6 bg-white border border-gray-200 rounded-lg shadow-m">
       <div className="flex justify-end w-full h-4 gap-2 ml-auto">
         <BritainIcon />
         <FranceIcon />
@@ -27,14 +27,14 @@ function CommunityCard() {
         <JavaScriptIcon />
         <HtmlIcon />
       </div>
-      <div className="flex flex-row items-center my-3">
+      <div className="flex w-full justify-between items-center my-3">
         <button className="bg-[#F3F3F3] rounded w-[105px] h-[24px]">Profile</button>
         <button className="bg-[#17ABDB] rounded w-[105px] h-[24px]">Follow</button>
       </div>
       <div className="flex justify-end w-full h-3 gap-2 mt-6 ml-auto text-cyan-600">
-        <FacebookIcon />
-        <TwitterIcon />
-        <LinkedinIcon />
+        <FacebookIcon className="w-3 h-3" />
+        <TwitterIcon className="w-3 h-3" />
+        <LinkedinIcon className="w-3 h-3" />
       </div>
     </div>
   );
