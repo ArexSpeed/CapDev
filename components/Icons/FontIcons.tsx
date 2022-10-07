@@ -167,7 +167,7 @@ export const LogoutIcon = ({ className = 'icon-medium' }: IconProps) => (
   </svg>
 );
 
-export const SearchIcon = ({ className = 'icon-medium' }: IconProps) => (
+export const SearchIcon = ({ className = 'w-6 h-6' }: IconProps) => (
   <svg
     className={className}
     fill="currentColor"

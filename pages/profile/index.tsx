@@ -1,6 +1,7 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 const ProfilePage = () => {
+  const [search, setSearch] = useState();
   return <div>ProfilePage</div>;
 };
 
