@@ -30,14 +30,15 @@ const checkUserExist = async (email: string) => {
 const create = async (payload: Payload) => {
   const db = await connectToDb();
   // eslint-disable-next-line prettier/prettier
-  const { email, name, password, position } = await schema.validateAsync(payload);
+  const { email, name, password, position, location } = await schema.validateAsync(payload);
   await checkUserExist(email);
-
+  console.log({ payload });
   const passwordSalt = crypto.randomBytes(16).toString('hex');
   const passwordHash = crypto
     .pbkdf2Sync(password, passwordSalt, 1000, 64, `sha512`)
     .toString(`hex`);
   // eslint-disable-next-line prettier/prettier
+  console.log('pass', passwordSalt, passwordHash);
   const blankImage =
     'https://res.cloudinary.com/dbpsxmtcb/image/upload/v1648748926/umcedkder4e0nxragcdg.png';
   const blankSocial = [
@@ -48,9 +49,10 @@ const create = async (payload: Payload) => {
     { name: 'github', link: '' },
     { name: 'dribbble', link: '' }
   ];
+
   const user = await db.collection('users').insertOne({
-    name,
     email,
+    name,
     imageUrl: blankImage,
     passwordSalt,
     passwordHash,
