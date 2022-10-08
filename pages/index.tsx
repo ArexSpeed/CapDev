@@ -3,7 +3,7 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import { Autoplay } from 'swiper';
 // Import Swiper styles
 import 'swiper/css';
-import CommunityCard from 'components/Community/CommunityCard';
+
 import RegisterForm from 'components/Forms/RegisterForm';
 import { useState } from 'react';
 import LoginForm from 'components/Forms/LoginForm';
@@ -14,6 +14,7 @@ import design from '../assets/work/design.webp';
 import devops from '../assets/work/devops.webp';
 import rightimage from '../assets/work/right-image.webp';
 import SkillsIconSwitcher from 'components/IconsSwitcher/SkillsIconSwitcher';
+import { CommunityCard } from 'components/CommunityCard';
 const Home: NextPage = () => {
   const [changeform, setChangeForm] = useState<boolean>(true);
 
@@ -208,7 +209,9 @@ const Home: NextPage = () => {
               </div>
               <div className="grid grid-flow-col grid-rows-2 gap-16 my-16">
                 {skills.map((skill, index) => (
-                  <>{<SkillsIconSwitcher name={skill} className="w-16 h-16" key={index} />}</>
+                  <div className="">
+                    <SkillsIconSwitcher name={skill} className="w-16 h-16 " />
+                  </div>
                 ))}
               </div>
             </div>
