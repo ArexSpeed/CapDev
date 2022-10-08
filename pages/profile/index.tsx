@@ -1,9 +1,11 @@
 import ProjectCard from 'components/Projects/projectcard';
 import React from 'react';
+import { PageTitle } from 'components/PageTitle';
 
 const ProfilePage = () => {
   return (
     <div className="flex flex-col">
+      <PageTitle pageTitle="Profile" />
       <div className="flex flex-row w-full">
         <ProjectCard />
         <div>
