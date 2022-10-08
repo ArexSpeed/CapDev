@@ -4,7 +4,7 @@ import { FacebookIcon, LinkedinIcon, TwitterIcon } from 'components/Icons/Social
 
 function CommunityCard() {
   return (
-    <div className="max-w-sm p-6 bg-white border border-gray-200 rounded-lg shadow-m">
+    <div className="w-full p-6 bg-white border border-gray-200 rounded-lg shadow-m">
       <div className="flex justify-end w-full h-4 gap-2 ml-auto">
         <BritainIcon />
         <FranceIcon />
