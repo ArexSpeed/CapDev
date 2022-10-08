@@ -14,7 +14,7 @@ export const TitleBox = ({ title, button, href /* session */ }: TitleBoxProps) =
       {
         /* session */ button && (
           <Link href={href} passHref>
-            <a className="px-4 py-1 bg-[#95E616] rounded">{button}</a>
+            <a className="px-4 py-1 bg-[#95E616] rounded-lg text-base ">{button}</a>
           </Link>
         )
       }
