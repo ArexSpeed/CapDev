@@ -26,9 +26,9 @@ const ProfileId = () => {
 <h2 className="text-2xl font-bold my-2">Developer Name</h2>
 <h3 className="text-xl  my-2">Frontend Developer</h3>
 <div className="flex">
-<PolandIcon className = 'w-6 h-6 m-1'/>
-<GermanyIcon className = 'w-6 h-6 m-1'/>
-<BritainIcon className = 'w-6 h-6 m-1'/>
+<PolandIcon className = 'w-5  m-1'/>
+<GermanyIcon className = 'w-5 m-1 '/>
+<BritainIcon className = 'w-5  m-1'/>
 </div>
 </div>
   </div>

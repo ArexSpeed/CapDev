@@ -1,5 +1,6 @@
 import Education from "components/Education";
 import { BritainIcon, GermanyIcon, PolandIcon } from "components/Icons/FlagIcons";
+import { EditIcon } from "components/Icons/FontIcons";
 import { FacebookIcon, LinkedinIcon, TwitterIcon } from "components/Icons/SocialIcons";
 import { Layout } from "components/Layout";
 import ProjectCard from "components/Projects/projectcard";
@@ -26,9 +27,9 @@ const ProfilePage = () => {
 <h2 className="text-2xl font-bold my-2">Developer Name</h2>
 <h3 className="text-xl  my-2">Frontend Developer</h3>
 <div className="flex">
-<PolandIcon className = 'w-6 h-6 m-1'/>
-<GermanyIcon className = 'w-6 h-6 m-1'/>
-<BritainIcon className = 'w-6 h-6 m-1'/>
+<PolandIcon className = 'w-5  m-1'/>
+<GermanyIcon className = 'w-5 m-1 '/>
+<BritainIcon className = 'w-5  m-1'/>
 </div>
 </div>
   </div>
@@ -36,11 +37,10 @@ const ProfilePage = () => {
 <div className="flex flex-col w-5/12 px-10">
 <div className="flex justify-between">
   <h4 className="my-3 ">About me</h4>
-    <div>
+    <a href=""><EditIcon/></a>
 
-      </div>
   </div>
-  <span>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Optio, voluptate necessitatibus saepe amet nobis reiciendis.</span>
+  <span className="font-medium">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Optio, voluptate necessitatibus saepe amet nobis reiciendis.</span>
 </div>
 
 
