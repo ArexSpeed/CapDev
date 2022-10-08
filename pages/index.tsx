@@ -207,7 +207,7 @@ const Home: NextPage = () => {
                   <span className="text-blue"> 50 </span>skills and technology
                 </h1>
               </div>
-              <div className="grid grid-flow-col grid-rows-2 gap-16 my-16">
+              <div className="grid grid-flow-col grid-rows-2 gap-32 my-32">
                 {skills.map((skill, index) => (
                   <div className="">
                     <SkillsIconSwitcher name={skill} className="w-16 h-16 " />
