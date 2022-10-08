@@ -14,7 +14,15 @@ interface CardProps {
   currentUserFollowed?: boolean;
 }
 
-function CommunityCard({ id, name, imageSrc, position, skills, langs, socials }: CardProps) {
+export const CommunityCard = ({
+  id,
+  name,
+  imageSrc,
+  position,
+  skills,
+  langs,
+  socials
+}: CardProps) => {
   return (
     <div className="w-full p-6 bg-white border border-gray-200 rounded-lg shadow-m">
       <div className="flex justify-end w-full h-4 gap-2 ml-auto">
@@ -50,6 +58,4 @@ function CommunityCard({ id, name, imageSrc, position, skills, langs, socials }:
       </div>
     </div>
   );
-}
-
-export default CommunityCard;
+};
