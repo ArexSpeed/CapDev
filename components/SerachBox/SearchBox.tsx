@@ -1,9 +1,9 @@
 import { SearchIcon } from '../Icons/FontIcons';
 
-export interface SearchBoxProps {
-  searchValue: string;
-  setSearchValue: (value: string) => void;
-  placeholder: string;
+interface SearchBoxProps {
+  searchValue?: string;
+  setSearchValue?: (value: string) => void;
+  placeholder?: string;
   /*   session: string; */
 }
 
@@ -14,10 +14,11 @@ export const SearchBox = ({ searchValue, setSearchValue, placeholder }: SearchBo
         <SearchIcon />
       </div>
       <input
+        value={searchValue}
         type="text"
         className="w-full h-full px-2 bg-transparent border-none outline-none"
         placeholder={placeholder}
-        onChange={(e) => setSearchValue(e.target.value)}
+        onChange={(e) => setSearchValue!(e.target.value)}
       />
     </div>
   );
