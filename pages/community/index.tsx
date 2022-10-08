@@ -1,8 +1,9 @@
 import { PageTitle } from 'components/PageTitle';
 import { Layout } from 'components/Layout';
-import CommunityCard from 'components/Community/communitycard';
+
 import { SearchBox } from 'components/SerachBox/SearchBox';
 import { useState } from 'react';
+import { CommunityCard } from 'components/CommunityCard';
 
 const CommunityPage = () => {
   const [searchValue, setSearchValue] = useState('');

@@ -15,7 +15,7 @@ interface CardProps {
   openToWork?: boolean;
 }
 
-function CommunityCard({
+export const CommunityCard = ({
   id,
   name,
   imageSrc,
@@ -24,7 +24,7 @@ function CommunityCard({
   langs,
   socials,
   openToWork
-}: CardProps) {
+}: CardProps) => {
   return (
     <div className="w-full p-6 bg-white rounded-lg shadow-sm">
       <div className="flex justify-end w-full h-4 gap-2 ml-auto">
@@ -63,6 +63,4 @@ function CommunityCard({
       </div>
     </div>
   );
-}
-
-export default CommunityCard;
+};
