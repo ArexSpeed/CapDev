@@ -68,15 +68,15 @@ const RegisterForm = () => {
 
   return (
     <motion.div
-      className="w-full max-w-[450px] bg-primary rounded-md shadow-sm h-full p-4"
+      className="w-full max-w-[450px] bg-primary rounded-md shadow-sm h-full p-4 m-auto"
       animate={{ opacity: 1, scale: 1, translateY: 0 }}
       initial={{ opacity: 0, scale: 0, translateY: '60%' }}
       exit={{ opacity: 0, scale: 0, translateY: '60%' }}
       transition={{ duration: 0.5, ease: 'easeInOut' }}>
-      <div className="text-24 pb-2 font-semibold">Create your new developer account</div>
+      <div className="pb-2 font-semibold text-24">Create your new developer account</div>
       <form action="#" onSubmit={handleSubmit} ref={registerForm}>
         {error && (
-          <div className="flex flex-row justify-center items-center w-full h-10 border-none bg-red-500 text-white rounded-sm">
+          <div className="flex flex-row items-center justify-center w-full h-10 text-white bg-red-500 border-none rounded-sm">
             {error}
           </div>
         )}
