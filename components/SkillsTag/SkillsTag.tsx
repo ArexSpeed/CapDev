@@ -40,7 +40,7 @@ const SkillsTags = ({ selectSkill, setSelectSkill }: SkillsTagsProps) => {
   return (
     <div className="flex skillstags">
       {skills.map((skill, i) => (
-        <button>
+        <button key={i}>
           <div className="">
             <SkillsIconSwitcher name={skill} className="w-6 h-6 " />
           </div>

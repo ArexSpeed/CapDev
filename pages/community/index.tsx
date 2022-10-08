@@ -1,13 +1,22 @@
 import { PageTitle } from 'components/PageTitle';
 import { Layout } from 'components/Layout';
 import CommunityCard from 'components/Community/communitycard';
+import { SearchBox } from 'components/SerachBox/SearchBox';
+import { useState } from 'react';
 
 const CommunityPage = () => {
+  const [searchValue, setSearchValue] = useState('');
+
   return (
     <Layout>
-      <div>
+      <div className="flex flex-col p-8">
         <PageTitle pageTitle="Community" />
-        <div className="grid w-full grid-cols-4 gap-4 p-4 ">
+        <SearchBox
+          searchValue={searchValue}
+          setSearchValue={setSearchValue}
+          placeholder="Find a developer"
+        />
+        <div className="grid w-full grid-cols-4 gap-4 pt-4 ">
           <CommunityCard
             openToWork={true}
             name="Arek"
@@ -23,3 +32,5 @@ const CommunityPage = () => {
     </Layout>
   );
 };
+
+export default CommunityPage;
