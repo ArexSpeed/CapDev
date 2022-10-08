@@ -26,7 +26,7 @@ interface Props {
   className: string;
 }
 
-const SkillsIconSwitcher = ({ name, className }: Props) => {
+const SkillsIconSwitcher = ({ name, className }: Props): JSX.Element => {
   switch (name) {
     case 'html':
       return <HtmlIcon className={className} />;
@@ -69,7 +69,7 @@ const SkillsIconSwitcher = ({ name, className }: Props) => {
     case 'net':
       return <NetIcon className={className} />;
     default:
-      return '';
+      return <HtmlIcon className={className} />;
   }
 };
 
