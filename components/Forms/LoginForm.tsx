@@ -37,15 +37,15 @@ const LoginForm = () => {
   };
   return (
     <motion.div
-      className="w-full max-w-[450px] bg-primary rounded-md shadow-sm h-full p-4"
+      className="w-full max-w-[450px] bg-primary rounded-md shadow-sm h-full p-4 m-auto"
       animate={{ opacity: 1, scale: 1, translateY: 0 }}
       initial={{ opacity: 0, scale: 0, translateY: 180 }}
       exit={{ opacity: 0, scale: 0, translateY: 180 }}
       transition={{ duration: 0.5, ease: 'easeInOut' }}>
       <form onSubmit={handleSubmit} ref={loginForm}>
-        <div className="text-24 pb-2 font-semibold">Login to your account</div>
+        <div className="pb-2 font-semibold text-24">Login to your account</div>
         {error && (
-          <div className="flex flex-row justify-center items-center w-full h-10 border-none bg-red-500 text-white rounded-sm">
+          <div className="flex flex-row items-center justify-center w-full h-10 text-white bg-red-500 border-none rounded-sm">
             {error}
           </div>
         )}
@@ -54,7 +54,7 @@ const LoginForm = () => {
             Email
           </label>
           <input
-            className="h-10 w-full px-2 bg-transparent border border-secondary rounded-md outline-none"
+            className="w-full h-10 px-2 bg-transparent border rounded-md outline-none border-secondary"
             type="text"
             name="email"
             placeholder="Enter your email"
@@ -66,7 +66,7 @@ const LoginForm = () => {
             Password
           </label>
           <input
-            className="h-10 w-full px-2 bg-transparent border border-secondary rounded-md outline-none"
+            className="w-full h-10 px-2 bg-transparent border rounded-md outline-none border-secondary"
             type="password"
             name="password"
             placeholder="Enter your password"
@@ -75,7 +75,7 @@ const LoginForm = () => {
         </div>
         <button
           type="submit"
-          className="w-full h-10 border-none font-bold text-white bg-blue rounded-md hover:bg-lightblue ease-in duration-300"
+          className="w-full h-10 font-bold text-white duration-300 ease-in border-none rounded-md bg-blue hover:bg-lightblue"
           disabled={formProcessing}>
           {formProcessing ? 'Checking...' : 'Login'}
         </button>
