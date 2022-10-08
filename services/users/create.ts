@@ -7,15 +7,13 @@ interface Payload {
   name: string;
   password: string;
   position: string;
-  location: string;
 }
 
 const schema = Joi.object({
   email: Joi.string().email().required(),
   name: Joi.string().required(),
   password: Joi.string().required(),
-  position: Joi.string().required(),
-  location: Joi.string().required()
+  position: Joi.string().required()
 });
 
 const checkUserExist = async (email: string) => {
@@ -30,7 +28,7 @@ const checkUserExist = async (email: string) => {
 const create = async (payload: Payload) => {
   const db = await connectToDb();
   // eslint-disable-next-line prettier/prettier
-  const { email, name, password, position, location } = await schema.validateAsync(payload);
+  const { email, name, password, position } = await schema.validateAsync(payload);
   await checkUserExist(email);
   console.log({ payload });
   const passwordSalt = crypto.randomBytes(16).toString('hex');
@@ -57,7 +55,7 @@ const create = async (payload: Payload) => {
     passwordSalt,
     passwordHash,
     position,
-    location,
+    location: '',
     languages: [],
     skills: [],
     socials: blankSocial,
