@@ -1,6 +1,6 @@
 import { PageTitle } from 'components/PageTitle';
 import { Layout } from 'components/Layout';
-import CommunityCard from 'components/Community/CommunityCard';
+import CommunityCard from 'components/Community/communitycard';
 
 const CommunityPage = () => {
   return (
