@@ -17,7 +17,7 @@ export const Navigation = () => {
   const router = useRouter();
 
   return (
-    <nav className="flex justify-between flex-col w-[256px] fixed">
+    <nav className="flex bg-primary justify-between flex-col top-[64px] w-[256px] fixed">
       <ul>
         <li className={itemStyle}>
           <Link href="/" passHref>

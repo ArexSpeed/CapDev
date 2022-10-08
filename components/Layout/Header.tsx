@@ -22,8 +22,8 @@ export const Header = () => {
   //   }, [session]);
 
   return (
-    <header className="flex justify-between w-full p-2.5">
-      <div className="flex justify-center items-center ">
+    <header className="flex bg-primary z-50 fixed justify-between w-full p-2.5">
+      <div className="flex items-center justify-center ">
         <Image src={logo} width={40} height={40} alt="logo" />
         <span className="text-2xl font-medium ml-2.5">CapDev</span>
       </div>
