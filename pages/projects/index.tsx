@@ -1,7 +1,7 @@
-import React from "react";
+import { PageTitle } from 'components/PageTitle';
 
 const ProjectsPage = () => {
-  return <div>ProjectsPage</div>;
+  return <PageTitle pageTitle="Projects" />;
 };
 
 export default ProjectsPage;
