@@ -3,11 +3,12 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import { Autoplay } from 'swiper';
 // Import Swiper styles
 import 'swiper/css';
-import CommunityCard from 'components/Community/CommunityCard';
+
 import RegisterForm from 'components/Forms/RegisterForm';
 import { useState } from 'react';
 import LoginForm from 'components/Forms/LoginForm';
 import Image from 'next/image';
+import { CommunityCard } from 'components/CommunityCard';
 const Home: NextPage = () => {
   const [changeform, setChangeForm] = useState<boolean>(true);
 
