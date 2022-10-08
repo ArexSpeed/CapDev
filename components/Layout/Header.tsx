@@ -2,16 +2,15 @@ import Image from 'next/image';
 import logo from 'assets/logo.png';
 import { BookmarkIcon, BookmarkOutlineIcon, NotificationIcon } from '../Icons/FontIcons';
 import Link from 'next/link';
-// import axios from 'axios';
 import { useState, useEffect } from 'react';
-// import { useSession } from 'next-auth/client';
+import { useSession } from 'next-auth/react';
 
 import photo from '../../assets/my-photo.jpg';
 
 const iconsStyle = 'text-blue w-[24px] h-[24px]';
 
 export const Header = () => {
-  //   const [session] = useSession();
+  const { data: session } = useSession();
   const [bookmarkHover, setBookmarkHover] = useState(false);
   const [user, setUser] = useState({});
 
@@ -46,7 +45,7 @@ export const Header = () => {
           </a>
         </Link>
         <div className="flex items-center ">
-          <span className="mr-2">Arek Cichocki</span>
+          <span className="mr-2">{session ? session.user.name : 'User Name'}</span>
           <Image src={photo} width={40} height={40} objectFit="contain" alt="" />
         </div>
       </div>
