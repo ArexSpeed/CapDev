@@ -4,9 +4,11 @@ import { Layout } from 'components/Layout';
 import { SearchBox } from 'components/SerachBox/SearchBox';
 import { useState } from 'react';
 import { CommunityCard } from 'components/CommunityCard';
+import { CommunityButtons } from 'components/Buttons/CommunityButtons';
 
 const CommunityPage = () => {
   const [searchValue, setSearchValue] = useState('');
+  const [activeButton, setActiveButton] = useState('All Developers');
 
   return (
     <Layout>
@@ -16,6 +18,14 @@ const CommunityPage = () => {
           searchValue={searchValue}
           setSearchValue={setSearchValue}
           placeholder="Find a developer"
+        />
+        <CommunityButtons
+          activeButton={activeButton}
+          setActiveButton={setActiveButton}
+          value1="All Developers"
+          value2="Friends"
+          value3="Followers"
+          value4="Projects"
         />
         <div className="grid w-full grid-cols-4 gap-4 pt-4 ">
           <CommunityCard
