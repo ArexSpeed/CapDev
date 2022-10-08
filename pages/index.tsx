@@ -8,6 +8,12 @@ import RegisterForm from 'components/Forms/RegisterForm';
 import { useState } from 'react';
 import LoginForm from 'components/Forms/LoginForm';
 import Image from 'next/image';
+import backend from '../assets/work/backend.webp';
+import frontend from '../assets/work/frontend.webp';
+import design from '../assets/work/design.webp';
+import devops from '../assets/work/devops.webp';
+import rightimage from '../assets/work/right-image.webp';
+import SkillsIconSwitcher from 'components/IconsSwitcher/SkillsIconSwitcher';
 const Home: NextPage = () => {
   const [changeform, setChangeForm] = useState<boolean>(true);
 
@@ -30,10 +36,36 @@ const Home: NextPage = () => {
   ];
 
   let app = [
-    'https://www.frontend-gmbh.de/wp-content/themes/frontendgmbh/downloads/frontend-logo.png',
-    'https://thumbs.dreamstime.com/b/back-end-linear-icon-modern-outline-back-end-logo-concept-wh-back-end-linear-icon-modern-outline-back-end-logo-concept-white-133526061.jpg',
-    'https://cdn.dribbble.com/users/13574/screenshots/9711275/logo-devops.png',
-    'https://www.logodesign.net/logo/cloud-storage-with-files-6216ld.png?size=2&industry=information-technology'
+    {
+      src: frontend,
+      name: 'Frontend'
+    },
+    {
+      src: backend,
+      name: 'Backend'
+    },
+    {
+      src: devops,
+      name: 'DevOps'
+    },
+    {
+      src: design,
+      name: 'Design'
+    }
+  ];
+  let skills = [
+    'html',
+    'css',
+    'sass',
+    'react',
+    'javascript',
+    'typescript',
+    'tailwind',
+    'node',
+    'next',
+    'angular',
+    'csharp',
+    'cplus'
   ];
   return (
     <div className="w-full h-full bg-secondary">
@@ -141,8 +173,44 @@ const Home: NextPage = () => {
                 <h1 className="my-4 text-left text-7xl">
                   Every part of application design and develop is handle by our developers
                 </h1>
+                <ul className="flex flex-col items-center justify-center">
+                  {app.map((ap, index) => (
+                    <li className="flex items-center justify-center my-5" key={index}>
+                      <Image
+                        src={ap.src}
+                        alt={index.toString()}
+                        width="70"
+                        height="70"
+                        layout="fixed"></Image>
+                      <span className="text-32" key={ap.name}>
+                        {ap.name}
+                      </span>
+                    </li>
+                  ))}
+                </ul>
               </div>
-              <div className="flex flex-col items-center justify-center w-full h-full"></div>
+              <div className="items-center justify-center w-full h-full">
+                <Image src={rightimage} alt={'right-image'} layout="fixed" />
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section className="h-screen">
+        <div className="h-screen">
+          <div className="items-center h-screen p-8 text-center">
+            <div className="flex flex-col w-3/4 h-full p-12 m-auto">
+              <div className="text-left text-7xl">
+                <h1>
+                  Our <span className="text-blue">developers</span> have over
+                  <span className="text-blue"> 50 </span>skills and technology
+                </h1>
+              </div>
+              <div className="grid grid-flow-col grid-rows-2 gap-16 my-16">
+                {skills.map((skill, index) => (
+                  <>{<SkillsIconSwitcher name={skill} className="w-16 h-16" key={index} />}</>
+                ))}
+              </div>
             </div>
           </div>
         </div>
