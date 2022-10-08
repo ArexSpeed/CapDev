@@ -29,6 +29,12 @@ const Home: NextPage = () => {
     'https://res.cloudinary.com/dbpsxmtcb/image/upload/v1649161751/k3xsagfgvqnz7cuplsxo.png'
   ];
 
+  let app = [
+    'https://www.frontend-gmbh.de/wp-content/themes/frontendgmbh/downloads/frontend-logo.png',
+    'https://thumbs.dreamstime.com/b/back-end-linear-icon-modern-outline-back-end-logo-concept-wh-back-end-linear-icon-modern-outline-back-end-logo-concept-white-133526061.jpg',
+    'https://cdn.dribbble.com/users/13574/screenshots/9711275/logo-devops.png',
+    'https://www.logodesign.net/logo/cloud-storage-with-files-6216ld.png?size=2&industry=information-technology'
+  ];
   return (
     <div className="w-full h-full bg-secondary">
       <section className="h-screen">
