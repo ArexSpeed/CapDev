@@ -1,10 +1,11 @@
 import CommunityCard from 'components/Community/communitycard';
+import { Layout } from 'components/Layout';
 
 const CommunityPage = () => {
   return (
-    <div>
+    <Layout>
       <CommunityCard />
-    </div>
+    </Layout>
   );
 };
 

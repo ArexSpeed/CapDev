@@ -1,8 +1,7 @@
 /* eslint-disable jsx-a11y/no-noninteractive-element-interactions */
 import { useRef } from 'react';
-// import { useSession } from 'next-auth/client';
 import Link from 'next/link';
-// import { signOut } from 'next-auth/client';
+import { useSession, signOut } from 'next-auth/react';
 import { useRouter } from 'next/router';
 // eslint-disable-next-line prettier/prettier
 import { CommunityIcon, HomeIcon, LogoutIcon, ProfileIcon, ProjectIcon } from '../Icons/FontIcons';
@@ -36,22 +35,6 @@ export const Navigation = () => {
             </a>
           </Link>
         </li>
-        {/* <li className={itemStyle}>
-          <Link href="/blog" passHref>
-            <a className={router.pathname === '/blog' ? `${linkActiveStyle}` : `${linkStyle}`}>
-              <BlogIcon className={iconsStyle} />
-              <span className={spanStyle}>Blog</span>
-            </a>
-          </Link>
-        </li> */}
-        {/* <li className={itemStyle}>
-          <Link href="/events" passHref>
-            <a className={router.pathname === '/events' ? `${linkActiveStyle}` : `${linkStyle}`}>
-              <EventIcon className={iconsStyle} />
-              <span className={spanStyle}>Events</span>
-            </a>
-          </Link>
-        </li> */}
         <li className={itemStyle}>
           <Link href="/projects" passHref>
             <a className={router.pathname === '/projects' ? `${linkActiveStyle}` : `${linkStyle}`}>
@@ -70,16 +53,13 @@ export const Navigation = () => {
         </li>
       </ul>
       <ul className="mt-10">
-        {/* {session && ( */}
-
         <li
           className={itemStyle}
-          // onClick={() =>
-          //   signOut({
-          //     callbackUrl: `/`
-          //   })
-          // }
-        >
+          onClick={() =>
+            signOut({
+              callbackUrl: `/`
+            })
+          }>
           <Link href="/" passHref>
             <a className={linkStyle}>
               <LogoutIcon className={iconsStyle} />
@@ -87,7 +67,6 @@ export const Navigation = () => {
             </a>
           </Link>
         </li>
-        {/* )} */}
       </ul>
     </nav>
   );
