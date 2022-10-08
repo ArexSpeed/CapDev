@@ -1,9 +1,12 @@
+import { Layout } from 'components/Layout';
+import ProjectOneSiteItem from 'components/Projects/projectonesite';
+
 interface Props {}
 
 export default function ProjectOneSite() {
   return (
-    <div className="">
-      <ProjectOneSite />
-    </div>
+    <Layout>
+      <ProjectOneSiteItem />
+    </Layout>
   );
 }
