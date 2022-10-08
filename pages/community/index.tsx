@@ -1,12 +1,12 @@
-import CommunityCard from 'components/Community/CommunityCard';
 import { PageTitle } from 'components/PageTitle';
 import { Layout } from 'components/Layout';
+import CommunityCard from 'components/Community/CommunityCard';
 
 const CommunityPage = () => {
   return (
     <Layout>
       <div>
-        <PageTitle pageTitle="Cpmmunity" />
+        <PageTitle pageTitle="Community" />
         <div className="grid w-full grid-cols-4 gap-4 p-4 ">
           <CommunityCard name="Arek" imageSrc="" position="Full stack developer" />
           <CommunityCard name="Seba" imageSrc="" position="DevOoops developer" />
