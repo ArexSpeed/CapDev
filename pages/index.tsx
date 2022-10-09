@@ -71,16 +71,18 @@ const Home: NextPage = () => {
   return (
     <div className="w-full h-full bg-secondary">
       <section className="h-screen">
-        <div className="h-screen">
+        <div className="h-full">
           <div className="items-center h-screen p-8 text-center">
             <div className="flex flex-row h-full w-full p-12 gap-[20%]">
               <div className="flex flex-col items-start justify-center w-full h-full">
                 <h1 className="my-4 text-left text-7xl">
                   Welcome to <span className="text-blue">CapDev Community</span>
                 </h1>
-                <button className="h-12 my-4 font-bold text-center text-white bg-blue w-36">
-                  Discover
-                </button>
+                <a href="/community">
+                  <button className="h-12 my-4 font-bold text-center text-white rounded-lg bg-blue w-36">
+                    Discover
+                  </button>
+                </a>
               </div>
               <div className="flex flex-col items-center justify-center w-full h-full">
                 <div className="h-auto w-[489px] bg-white">
@@ -98,7 +100,7 @@ const Home: NextPage = () => {
         </div>
       </section>
       <section className="h-screen">
-        <div className="h-screen">
+        <div className="h-full">
           <div className="items-center h-screen p-8 text-center">
             <div className="flex flex-row h-[400px] w-full p-12">
               <div className="flex items-center w-1/2 h-full">
@@ -142,8 +144,8 @@ const Home: NextPage = () => {
         </div>
       </section>
       <section className="h-screen">
-        <div className="h-screen">
-          <div className="items-center h-screen p-8 text-center">
+        <div className="h-full">
+          <div className="items-center h-full p-8 text-center">
             <div className="flex flex-col w-3/4 h-full p-12 m-auto">
               <div className="text-left text-7xl">
                 <h1>
@@ -167,8 +169,8 @@ const Home: NextPage = () => {
         </div>
       </section>
       <section className="h-screen">
-        <div className="h-screen">
-          <div className="items-center h-screen p-8 text-center">
+        <div className="h-full">
+          <div className="items-center h-full p-8 text-center">
             <div className="flex flex-row h-full w-full p-12 gap-[20%]">
               <div className="flex flex-col items-start justify-center w-full h-full">
                 <h1 className="my-4 text-left text-7xl">
@@ -198,8 +200,8 @@ const Home: NextPage = () => {
         </div>
       </section>
       <section className="h-screen">
-        <div className="h-screen">
-          <div className="items-center h-screen p-8 text-center">
+        <div className="h-full">
+          <div className="items-center h-full p-8 text-center">
             <div className="flex flex-col w-3/4 h-full p-12 m-auto">
               <div className="text-left text-7xl">
                 <h1>
