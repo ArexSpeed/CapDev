@@ -25,9 +25,9 @@ export const CommunityButtons = ({
         initial={{ opacity: 0, scale: 0 }}
         exit={{ opacity: 0, scale: 0 }}
         transition={{ duration: 0.5, ease: 'easeInOut', delay: 0.1 }}
-        className={activeButton === value1 ? ' text-blue font-bold' : ''}
-        onClick={() => setActiveButton(value1)}>
-        {value1}
+        className={activeButton === '' ? ' text-blue font-bold' : ''}
+        onClick={() => setActiveButton('')}>
+        All developers
       </motion.button>
 
       <motion.button
@@ -35,9 +35,9 @@ export const CommunityButtons = ({
         initial={{ opacity: 0, scale: 0 }}
         exit={{ opacity: 0, scale: 0 }}
         transition={{ duration: 0.5, ease: 'easeInOut', delay: 0.2 }}
-        className={activeButton === value2 ? ' text-blue font-bold ' : ''}
-        onClick={() => setActiveButton(value2)}>
-        {value2}
+        className={activeButton === 'Friends' ? ' text-blue font-bold ' : ''}
+        onClick={() => setActiveButton('Friends')}>
+        Friends
       </motion.button>
 
       <motion.button
@@ -45,9 +45,9 @@ export const CommunityButtons = ({
         initial={{ opacity: 0, scale: 0 }}
         exit={{ opacity: 0, scale: 0 }}
         transition={{ duration: 0.5, ease: 'easeInOut', delay: 0.3 }}
-        className={activeButton === value3 ? ' text-blue font-bold ' : ''}
-        onClick={() => setActiveButton(value3)}>
-        {value3}
+        className={activeButton === 'Followers' ? ' text-blue font-bold ' : ''}
+        onClick={() => setActiveButton('Followers')}>
+        Followers
       </motion.button>
 
       <motion.button
@@ -55,9 +55,9 @@ export const CommunityButtons = ({
         initial={{ opacity: 0, scale: 0 }}
         exit={{ opacity: 0, scale: 0 }}
         transition={{ duration: 0.5, ease: 'easeInOut', delay: 0.4 }}
-        className={activeButton === value4 ? ' text-blue font-bold ' : ''}
-        onClick={() => setActiveButton(value4)}>
-        {value4}
+        className={activeButton === 'Projects' ? ' text-blue font-bold ' : ''}
+        onClick={() => setActiveButton('Projects')}>
+        Projects
       </motion.button>
     </section>
   );
