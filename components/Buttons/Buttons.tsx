@@ -28,9 +28,9 @@ const Buttons = ({
         initial={{ opacity: 0, scale: 0 }}
         exit={{ opacity: 0, scale: 0 }}
         transition={{ duration: 0.5, ease: 'easeInOut', delay: 0.1 }}
-        className={activeButton === value1 ? ' text-blue font-bold' : ''}
-        onClick={() => setActiveButton(value1)}>
-        {value1}
+        className={activeButton === '' ? ' text-blue font-bold' : ''}
+        onClick={() => setActiveButton('')}>
+        All projects
       </motion.button>
 
       <motion.button
@@ -38,9 +38,9 @@ const Buttons = ({
         initial={{ opacity: 0, scale: 0 }}
         exit={{ opacity: 0, scale: 0 }}
         transition={{ duration: 0.5, ease: 'easeInOut', delay: 0.2 }}
-        className={activeButton === value2 ? ' text-blue font-bold ' : ''}
-        onClick={() => setActiveButton(value2)}>
-        {value2}
+        className={activeButton === 'Company' ? ' text-blue font-bold ' : ''}
+        onClick={() => setActiveButton('Company')}>
+        Company
       </motion.button>
 
       <motion.button
@@ -48,9 +48,9 @@ const Buttons = ({
         initial={{ opacity: 0, scale: 0 }}
         exit={{ opacity: 0, scale: 0 }}
         transition={{ duration: 0.5, ease: 'easeInOut', delay: 0.3 }}
-        className={activeButton === value3 ? ' text-blue font-bold ' : ''}
-        onClick={() => setActiveButton(value3)}>
-        {value3}
+        className={activeButton === 'Single' ? ' text-blue font-bold ' : ''}
+        onClick={() => setActiveButton('Single')}>
+        Single
       </motion.button>
 
       <motion.button
@@ -58,9 +58,9 @@ const Buttons = ({
         initial={{ opacity: 0, scale: 0 }}
         exit={{ opacity: 0, scale: 0 }}
         transition={{ duration: 0.5, ease: 'easeInOut', delay: 0.3 }}
-        className={activeButton === value4 ? ' text-blue font-bold ' : ''}
-        onClick={() => setActiveButton(value4)}>
-        {value4}
+        className={activeButton === 'Your' ? ' text-blue font-bold ' : ''}
+        onClick={() => setActiveButton('Your')}>
+        Your
       </motion.button>
 
       <motion.button
@@ -68,9 +68,9 @@ const Buttons = ({
         initial={{ opacity: 0, scale: 0 }}
         exit={{ opacity: 0, scale: 0 }}
         transition={{ duration: 0.5, ease: 'easeInOut', delay: 0.3 }}
-        className={activeButton === value5 ? ' text-blue font-bold  ' : ''}
-        onClick={() => setActiveButton(value5)}>
-        {value5}
+        className={activeButton === 'Favorite' ? ' text-blue font-bold  ' : ''}
+        onClick={() => setActiveButton('Favorite')}>
+        Favorite
       </motion.button>
     </section>
   );
