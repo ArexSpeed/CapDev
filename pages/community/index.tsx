@@ -88,6 +88,7 @@ const CommunityPage = () => {
           {users.map((user) => (
             <CommunityCard
               key={user._id}
+              userId={user._id}
               name={user.name}
               openToWork={user.openToProject}
               position={user.position}
