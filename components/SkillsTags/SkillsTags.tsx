@@ -36,7 +36,7 @@ const SkillsTags = ({ selectSkill, setSelectSkill }: SkillsTagsProps) => {
   };
 
   return (
-    <div className="flex">
+    <div className="flex w-full bg-white rounded-lg">
       {skills.map((skill, i) => (
         <motion.button
           animate={{ opacity: 1, scale: 1 }}
