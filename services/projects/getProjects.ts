@@ -3,8 +3,9 @@ import { ObjectId } from 'mongodb';
 
 export const getOneProject = async (id: string) => {
   const db = await connectToDb();
+  console.log('service id', id);
   const project = await db
-    .collection('project')
+    .collection('projects')
     .find({ _id: new ObjectId(id) })
     .sort({ _id: 1 })
     .toArray();

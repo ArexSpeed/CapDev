@@ -99,11 +99,9 @@ const ProfileId: NextPage<Props> = ({ userProp }) => {
         <div className="skills">
           <h4 className="my-3">Skills</h4>
           <div className="flex flex-wrap">
-            <div className="flex">
-              {user?.skills.map((skill: string, i: any) => (
-                <Skill key={i} name={skill} />
-              ))}
-            </div>
+            {user?.skills.map((skill: string, i: any) => (
+              <Skill key={i} name={skill} />
+            ))}
           </div>
         </div>
         <div className="flex flex-row w-full experienceEducation">

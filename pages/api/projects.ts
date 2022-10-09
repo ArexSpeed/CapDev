@@ -12,6 +12,7 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
         const id = req.query.id.toString();
         console.log('query id', id);
         const data = await getOneProject(id);
+        console.log('data project one', data);
         res.json(data);
         break;
       }
