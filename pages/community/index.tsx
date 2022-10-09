@@ -7,34 +7,37 @@ import { CommunityCard } from 'components/CommunityCard';
 import { CommunityButtons } from 'components/Buttons/CommunityButtons';
 import SkillsTags from 'components/SkillsTags/SkillsTags';
 import axios from 'axios';
-
+import { useSession } from 'next-auth/react';
 const formInput =
   'h-10 w-[300px] p-2 bg-transparent bg-primary border border-secondary rounded-md outline-none';
+
+type Users = {
+  location?: string;
+  about?: string;
+  experience?: [];
+  education?: [];
+  openToProject?: boolean;
+  friends?: [];
+  followers?: [];
+  projetcs?: [];
+  _id: string;
+  name: string;
+  email: string;
+  imageUrl?: string;
+  position?: string;
+  languages?: [];
+  skills?: [];
+  socials: [];
+};
 
 const CommunityPage = () => {
   const [searchValue, setSearchValue] = useState('');
   const [selectSkill, setSelectSkill] = useState(['']);
-  const [activeButton, setActiveButton] = useState('All Developers');
+  const [activeButton, setActiveButton] = useState('');
   const [users, setUsers] = useState<Users[]>([]);
-
-  type Users = {
-    location?: string;
-    about?: string;
-    experience?: [];
-    education?: [];
-    openToProject?: boolean;
-    friends?: [];
-    followers?: [];
-    projetcs?: [];
-    _id: string;
-    name: string;
-    email: string;
-    imageUrl?: string;
-    position?: string;
-    languages?: [];
-    skills?: [];
-    socials: [];
-  };
+  const [checked, setChecked] = useState(false);
+  const { data: session } = useSession();
+  const [currentUser, setCurrentUserData] = useState<Users>();
 
   useEffect(() => {
     const func = async () => {
@@ -44,7 +47,22 @@ const CommunityPage = () => {
     func();
   }, []);
 
-  console.log({ users });
+  console.log(session);
+  useEffect(() => {
+    const currentUser = users.find((user) => user.name === session?.user.name);
+    if (currentUser) setCurrentUserData(currentUser);
+  }, [users]);
+
+  // console.log({ users });
+
+  const checkFriend = (name: string) => {
+    //currentUser.find((user) => user.name === name);
+    console.log({ currentUser });
+    return currentUser?.friends?.find((user) => user === name);
+  };
+  const checkFollowers = (name: string) => {
+    return currentUser?.followers?.find((user) => user === name);
+  };
 
   return (
     <Layout>
@@ -71,33 +89,70 @@ const CommunityPage = () => {
               className="flex cursor-pointer items-center justify-around w-[200px]"
               htmlFor="open-to-work">
               Open to work
-              <input id="open-to-work" type="checkbox" className="w-4 h-4" />
+              <input
+                id="open-to-work"
+                type="checkbox"
+                className="w-4 h-4"
+                onChange={() => setChecked(!checked)}
+              />
             </label>
           </div>
         </div>
 
-        <CommunityButtons
-          activeButton={activeButton}
-          setActiveButton={setActiveButton}
-          value1="All Developers"
-          value2="Friends"
-          value3="Followers"
-          value4="Projects"
-        />
+        <CommunityButtons activeButton={activeButton} setActiveButton={setActiveButton} />
         <div className="grid w-full grid-cols-4 gap-4 pt-4 ">
-          {users.map((user) => (
-            <CommunityCard
-              key={user._id}
-              userId={user._id}
-              name={user.name}
-              openToWork={user.openToProject}
-              position={user.position}
-              skills={user.skills}
-              langs={user.languages}
-              socials={user.socials}
-              imageUrl={user.imageUrl}
-            />
-          ))}
+          {activeButton === '' &&
+            users?.map((user) => {
+              return (
+                <CommunityCard
+                  key={user._id}
+                  name={user.name}
+                  openToWork={user.openToProject}
+                  position={user.position}
+                  skills={user.skills}
+                  langs={user.languages}
+                  socials={user.socials}
+                  imageUrl={user.imageUrl}
+                />
+              );
+            })}
+
+          {activeButton === 'Friends' &&
+            users?.map((user) => {
+              const friendName = checkFriend(user.name);
+              if (friendName) {
+                return (
+                  <CommunityCard
+                    key={user._id}
+                    name={user.name}
+                    openToWork={user.openToProject}
+                    position={user.position}
+                    skills={user.skills}
+                    langs={user.languages}
+                    socials={user.socials}
+                    imageUrl={user.imageUrl}
+                  />
+                );
+              }
+            })}
+          {activeButton === 'Followers' &&
+            users?.map((user) => {
+              const friendName = checkFollowers(user.name);
+              if (friendName) {
+                return (
+                  <CommunityCard
+                    key={user._id}
+                    name={user.name}
+                    openToWork={user.openToProject}
+                    position={user.position}
+                    skills={user.skills}
+                    langs={user.languages}
+                    socials={user.socials}
+                    imageUrl={user.imageUrl}
+                  />
+                );
+              }
+            })}
         </div>
       </div>
     </Layout>
