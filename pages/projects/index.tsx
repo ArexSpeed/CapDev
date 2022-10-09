@@ -89,6 +89,7 @@ const ProjectsPage = () => {
                 else return project;
               })
               .filter((project) => project.category.includes(activeButton))
+              .filter((project) => project.title?.toLowerCase().includes(searchValue.toLowerCase()))
               ?.map((project, index) => (
                 <ProjectCard
                   author={project.author}

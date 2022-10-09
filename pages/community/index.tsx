@@ -102,6 +102,7 @@ const CommunityPage = () => {
                 else return user;
               })
               .filter((user) => user.openToProject === checked)
+              .filter((user) => user.name?.toLowerCase().includes(searchValue.toLowerCase()))
               ?.map((user) => {
                 return (
                   <CommunityCard
@@ -123,6 +124,7 @@ const CommunityPage = () => {
                 if (selectSkill !== '') return user.skills?.indexOf(selectSkill) !== -1;
                 else return user;
               })
+              .filter((user) => user.name?.toLowerCase().includes(searchValue.toLowerCase()))
               ?.map((user) => {
                 const friendName = checkFriend(user.name);
                 if (friendName) {
@@ -146,6 +148,7 @@ const CommunityPage = () => {
                 if (selectSkill !== '') return user.skills?.indexOf(selectSkill) !== -1;
                 else return user;
               })
+              .filter((user) => user.name?.toLowerCase().includes(searchValue.toLowerCase()))
               ?.map((user) => {
                 const friendName = checkFollowers(user.name);
                 if (friendName) {
