@@ -61,7 +61,7 @@ const ProfileId: NextPage<Props> = ({ userProp }) => {
               </div>
               <div className="flex justify-center mt-8 ">
                 {user?.socials.map((social: { [keyof: string]: string }, i: any) => (
-                  <Link href={social.link}>
+                  <Link key={i} href={social.link}>
                     <div>
                       <SocialIconSwitcher
                         key={i}
@@ -107,24 +107,51 @@ const ProfileId: NextPage<Props> = ({ userProp }) => {
         <div className="flex flex-row w-full experienceEducation">
           <div className="w-1/2 experience">
             <h4 className="my-3">Experience</h4>
-            <Education />
-            <Education />
-            <Education />
+            <Education date="2-11-2016" university="AWF" department="Education" field="Fitness" />
+            <Education date="4-12-2017" university="WSB" department="Programming" field="ML" />
+            <Education
+              date="24-09-2019"
+              university="Hogwords"
+              department="Programming"
+              field="Back-End"
+            />
           </div>
           <div className="w-1/2 ">
             <h4 className="my-3">Education</h4>
-            <Education />
-            <Education />
-            <Education />
+            <Education date="2-11-2016" university="AWF" department="Education" field="Fitness" />
+            <Education date="4-12-2017" university="WSB" department="Programming" field="ML" />
+            <Education
+              date="24-09-2019"
+              university="Hogwords"
+              department="Programming"
+              field="Back-End"
+            />
           </div>
         </div>
         <div>
           <h4 className="my-3">Projects</h4>
           <div className="flex flex-wrap w-full gap-x-10 gap-y-10">
-            {/* <ProjectCard/>
-    <ProjectCard/>
-    <ProjectCard/>
-    <ProjectCard/> */}
+            <ProjectCard
+              id="1"
+              title="AXA"
+              category="Single"
+              desc="Lorem ipsum"
+              date="07-10-2018"
+            />
+            <ProjectCard
+              id="1"
+              title="AXA"
+              category="Single"
+              desc="Lorem ipsum"
+              date="07-10-2018"
+            />
+            <ProjectCard
+              id="1"
+              title="AXA"
+              category="Single"
+              desc="Lorem ipsum"
+              date="07-10-2018"
+            />
           </div>
         </div>
       </div>
