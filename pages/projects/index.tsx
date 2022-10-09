@@ -44,8 +44,6 @@ const ProjectsPage = () => {
     func();
   }, []);
 
-  console.log({ projects });
-
   return (
     <Layout>
       <div className="font-roboto flex flex-col w-full h-full p-4 bg-[#E5E5E5] ">
