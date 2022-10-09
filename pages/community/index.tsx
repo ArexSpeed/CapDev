@@ -2,12 +2,11 @@ import { PageTitle } from 'components/PageTitle';
 import { Layout } from 'components/Layout';
 
 import { SearchBox } from 'components/SerachBox/SearchBox';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { CommunityCard } from 'components/CommunityCard';
 import { CommunityButtons } from 'components/Buttons/CommunityButtons';
 import SkillsTags from 'components/SkillsTags/SkillsTags';
-
-import users from '../../data/users.json';
+import axios from 'axios';
 
 const formInput =
   'h-10 w-[300px] p-2 bg-transparent bg-primary border border-secondary rounded-md outline-none';
@@ -16,10 +15,40 @@ const CommunityPage = () => {
   const [searchValue, setSearchValue] = useState('');
   const [selectSkill, setSelectSkill] = useState(['']);
   const [activeButton, setActiveButton] = useState('All Developers');
+  const [users, setUsers] = useState<Users[]>([]);
+
+  type Users = {
+    location?: string;
+    about?: string;
+    experience?: [];
+    education?: [];
+    openToProject?: boolean;
+    friends?: [];
+    followers?: [];
+    projetcs?: [];
+    _id: string;
+    name: string;
+    email: string;
+    imageUrl?: string;
+    position?: string;
+    languages?: [];
+    skills?: [];
+    socials: [];
+  };
+
+  useEffect(() => {
+    const func = async () => {
+      const getUsers = await axios.get('/api/users');
+      setUsers(getUsers.data);
+    };
+    func();
+  }, []);
+
+  console.log({ users });
 
   return (
     <Layout>
-      <div className="flex w-full flex-col p-8">
+      <div className="flex flex-col w-full p-8">
         <PageTitle pageTitle="Community" />
         <div className="flex">
           <SearchBox
@@ -58,7 +87,7 @@ const CommunityPage = () => {
         <div className="grid w-full grid-cols-4 gap-4 pt-4 ">
           {users.map((user) => (
             <CommunityCard
-              key={user.userid}
+              key={user._id}
               name={user.name}
               openToWork={user.openToProject}
               position={user.position}
