@@ -12,15 +12,7 @@ export interface ButtonsProps {
   /*   session: string; */
 }
 
-const Buttons = ({
-  activeButton,
-  setActiveButton,
-  value1,
-  value2,
-  value3,
-  value4,
-  value5
-}: ButtonsProps) => {
+const Buttons = ({ activeButton, setActiveButton }: ButtonsProps) => {
   return (
     <section className="flex w-full mt-4 mb-3 gap-11 text-20">
       <motion.button

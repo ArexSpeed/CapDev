@@ -3,21 +3,10 @@ import { motion } from 'framer-motion';
 interface ButtonsProps {
   activeButton: string;
   setActiveButton: (value: string) => void;
-  value1: string;
-  value2: string;
-  value3: string;
-  value4: string;
   /*   session: string; */
 }
 
-export const CommunityButtons = ({
-  activeButton,
-  setActiveButton,
-  value1,
-  value2,
-  value3,
-  value4
-}: ButtonsProps) => {
+export const CommunityButtons = ({ activeButton, setActiveButton }: ButtonsProps) => {
   return (
     <section className="flex w-full mt-4 mb-3 gap-11 text-20 ">
       <motion.button
