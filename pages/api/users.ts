@@ -1,7 +1,7 @@
 import { ObjectId } from 'mongodb';
 import { NextApiRequest, NextApiResponse } from 'next';
 import create from 'services/users/create';
-import { getOneUser, getAllUsers } from 'services/users/getUsers';
+import { getOneUser, getAllUsers, getOneUserByName } from 'services/users/getUsers';
 import { connectToDb } from 'utils/mongodb';
 
 export default async (req: NextApiRequest, res: NextApiResponse) => {
@@ -12,6 +12,13 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
       if (req.query.id) {
         const id = req.query.id.toString();
         const data = await getOneUser(id);
+        res.json(data);
+        break;
+      }
+      if (req.query.name) {
+        console.log('name api', req.query.name);
+        const name = req.query.name.toString();
+        const data = await getOneUserByName(name);
         res.json(data);
         break;
       }

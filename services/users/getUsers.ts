@@ -12,6 +12,13 @@ export const getOneUser = async (id: string) => {
   return user[0];
 };
 
+export const getOneUserByName = async (name: string) => {
+  const db = await connectToDb();
+  const user = await db.collection('users').find({ name: name }).sort({ _id: 1 }).toArray();
+
+  return user[0];
+};
+
 export const getAllUsers = async () => {
   const db = await connectToDb();
   const users = await db.collection('users').find().sort({ _id: 1 }).toArray();
