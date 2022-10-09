@@ -1,6 +1,5 @@
 import { PageTitle } from 'components/PageTitle';
 import { Layout } from 'components/Layout';
-
 import { SearchBox } from 'components/SerachBox/SearchBox';
 import { useEffect, useState } from 'react';
 import { CommunityCard } from 'components/CommunityCard';
@@ -8,6 +7,7 @@ import { CommunityButtons } from 'components/Buttons/CommunityButtons';
 import SkillsTags from 'components/SkillsTags/SkillsTags';
 import axios from 'axios';
 import { useSession } from 'next-auth/react';
+
 const formInput =
   'h-10 w-[300px] p-2 bg-transparent bg-primary border border-secondary rounded-md outline-none';
 

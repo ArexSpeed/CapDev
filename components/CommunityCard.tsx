@@ -29,7 +29,7 @@ export const CommunityCard = ({
   openToWork
 }: CardProps) => {
   return (
-    <div className="w-full p-6 bg-white rounded-lg shadow-sm">
+    <div className="flex flex-col w-full p-6 bg-white rounded-lg shadow-sm">
       <div className="flex justify-end w-full h-4 gap-2 ml-auto">
         {langs?.map((lang, i) => (
           <FlagIconSwitcher key={i} country={lang} />
@@ -57,7 +57,7 @@ export const CommunityCard = ({
           </div>
         </div>
       </div>
-      <p className="mb-3 font-normal text-gray-700">Main Skills</p>
+      <span className="mb-3 font-normal text-gray-700">Main Skills</span>
       <div className="flex flex-row w-full h-6 gap-2 my-3 text-cyan-600">
         {skills?.map((skill, i) => (
           <SkillsIconSwitcher key={i} name={skill} className="icon-medium secondary-blue" />
