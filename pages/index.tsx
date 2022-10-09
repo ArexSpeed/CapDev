@@ -89,10 +89,21 @@ const Home: NextPage = () => {
                   {changeform ? <LoginForm /> : <RegisterForm />}
                 </div>
                 <div className="flex items-center justify-center w-[489px] h-16 mt-8 text-center bg-white rounded-lg">
-                  <span className="m-4">Do not have an account?</span>
-                  <button className="text-blue" onClick={toggleChangeForm}>
-                    Register
-                  </button>
+                  {changeform ? (
+                    <>
+                      <span className="m-4">Do not have an account?</span>
+                      <button className="text-blue" onClick={toggleChangeForm}>
+                        Register
+                      </button>
+                    </>
+                  ) : (
+                    <>
+                      <span className="m-4">Back to login form</span>
+                      <button className="text-blue" onClick={toggleChangeForm}>
+                        Login
+                      </button>
+                    </>
+                  )}
                 </div>
               </div>
             </div>
