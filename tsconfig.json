@@ -16,6 +16,6 @@
     "incremental": true,
     "baseUrl": "."
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "components/Forms/ProjectForm.jsx"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "components/Forms/ProjectForm.jsx", "pages/api/upload.js"],
   "exclude": ["node_modules"]
 }
