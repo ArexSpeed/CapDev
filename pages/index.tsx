@@ -222,7 +222,7 @@ const Home: NextPage = () => {
               </div>
               <div className="grid grid-flow-col grid-rows-2 gap-32 my-32">
                 {skills.map((skill, index) => (
-                  <div className="">
+                  <div key={index} className="">
                     <SkillsIconSwitcher name={skill} className="w-16 h-16 " />
                   </div>
                 ))}

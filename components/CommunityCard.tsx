@@ -5,6 +5,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 
 interface CardProps {
+  userId?: string;
   name?: string;
   imageSrc?: string;
   position?: string;
@@ -18,6 +19,7 @@ interface CardProps {
 }
 
 export const CommunityCard = ({
+  userId,
   name,
   imageUrl,
   position,
@@ -62,7 +64,10 @@ export const CommunityCard = ({
         ))}
       </div>
       <div className="flex items-center justify-between w-full my-3">
-        <button className="bg-[#F3F3F3] rounded w-[105px] h-[24px]">Profile</button>
+        <button className="bg-[#F3F3F3] rounded w-[105px] h-[24px]">
+          <Link href={`/profile/${userId}`}>Profile</Link>
+        </button>
+
         <button className="bg-[#17ABDB] rounded w-[105px] h-[24px]">Follow</button>
       </div>
       <div className="flex items-center justify-between ">
@@ -71,13 +76,13 @@ export const CommunityCard = ({
         ) : (
           <span></span>
         )}
-        <div className="flex h-7 items-center ">
+        <div className="flex items-center h-7 ">
           {socials?.map((social, i) => (
             <Link key={i} href={social.link} passHref>
               <a>
                 <SocialIconSwitcher
                   name={social.name}
-                  className="flex w-3 h-3 gap-2 m-1  text-cyan-600"
+                  className="flex w-3 h-3 gap-2 m-1 text-cyan-600"
                 />
               </a>
             </Link>
