@@ -34,7 +34,6 @@ const ProjectsPage = () => {
   const [activeButton, setActiveButton] = useState('');
   const [activeSubButton, setActiveSubButton] = useState('All projects');
   const [projects, setProjects] = useState<Projects[]>([]);
-  const [category, setCategory] = useState();
 
   useEffect(() => {
     const func = async () => {
