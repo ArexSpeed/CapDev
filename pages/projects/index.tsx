@@ -30,7 +30,7 @@ type Projects = {
 const ProjectsPage = () => {
   /*   const [session, loading] = useSession(); */
   const [searchValue, setSearchValue] = useState('');
-  const [selectSkill, setSelectSkill] = useState(['']);
+  const [selectSkill, setSelectSkill] = useState('');
   const [activeButton, setActiveButton] = useState('');
   const [activeSubButton, setActiveSubButton] = useState('All projects');
   const [projects, setProjects] = useState<Projects[]>([]);

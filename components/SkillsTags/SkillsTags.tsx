@@ -1,6 +1,5 @@
 import SkillsIconSwitcher from '../IconsSwitcher/SkillsIconSwitcher';
 import { motion } from 'framer-motion';
-import React, { useEffect, useState } from 'react';
 // eslint-disable-next-line prettier/prettier
 const skills = [
   'html',
@@ -26,13 +25,13 @@ const skills = [
 ];
 
 export interface SkillsTagsProps {
-  selectSkill: string[];
-  setSelectSkill: (value: string[]) => void;
+  selectSkill: string;
+  setSelectSkill: (value: string) => void;
 }
 
 const SkillsTags = ({ selectSkill, setSelectSkill }: SkillsTagsProps) => {
   const toggleSkill = (skill: string) => {
-    selectSkill[0] === skill ? setSelectSkill(['']) : setSelectSkill([skill]);
+    selectSkill === skill ? setSelectSkill('') : setSelectSkill(skill);
   };
 
   return (
@@ -44,13 +43,13 @@ const SkillsTags = ({ selectSkill, setSelectSkill }: SkillsTagsProps) => {
           exit={{ opacity: 0, scale: 0 }}
           transition={{ duration: 0.5, ease: 'easeInOut', delay: i / 50 }}
           key={i}
-          className={`${selectSkill[0] === skill ? 'active' : ''}`}
+          className={`${selectSkill === skill ? 'active' : ''}`}
           onClick={() => toggleSkill(skill)}>
           <div>
             <SkillsIconSwitcher
               name={skill}
               className={`${
-                selectSkill[0] === skill
+                selectSkill === skill
                   ? 'text-blue h-9 w-9 p-[2px] border-4 rounded'
                   : ' text-blue  h-9 w-9 p-[6px]'
               }`}
