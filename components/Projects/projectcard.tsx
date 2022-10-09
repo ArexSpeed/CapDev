@@ -68,9 +68,9 @@ function ProjectCard({
           </button>
         </div>
         <button>
-          <div className="flex items-center h-[33px] w-[133px] border-0 border-solid rounded-lg bg-[#95E616] text-cyan-600">
+          <div className="flex items-center h-[33px] w-[133px] border-0 border-solid rounded-lg bg-[#95E616] text-cyan-600 gap-2">
             <WebsiteIcon />
-            <span className="self-center text-gray-900">Go to project</span>
+            <span className="self-center text-black">Go to project</span>
           </div>
         </button>
       </div>
