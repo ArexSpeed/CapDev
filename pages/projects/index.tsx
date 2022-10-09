@@ -6,6 +6,7 @@ import SkillsTags from '../../components/SkillsTags/SkillsTags';
 import ProjectCard from 'components/Projects/projectcard';
 import Button from 'components/Buttons/Button';
 import SubButton from 'components/Buttons/SubButton';
+import Buttons from 'components/Buttons/Buttons';
 /* import { useSession } from 'next-auth/client'; */
 
 const ProjectsPage = () => {
@@ -37,7 +38,7 @@ const ProjectsPage = () => {
         <section className="w-full bg-white rounded-lg">
           <SkillsTags selectSkill={selectSkill} setSelectSkill={setSelectSkill} />
         </section>
-        <Button
+        <Buttons
           activeButton={activeButton}
           setActiveButton={setActiveButton}
           value1="All projects"
