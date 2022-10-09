@@ -1,6 +1,7 @@
 import { HeartIcon } from 'components/Icons/FontIcons';
 import { CssIcon, HtmlIcon, ReactIcon, SassIcon } from 'components/Icons/SkillsIcons';
 import { WebsiteIcon } from 'components/Icons/SocialIcons';
+import SkillsIconSwitcher from 'components/IconsSwitcher/SkillsIconSwitcher';
 
 type User = {
   id: string;
@@ -46,7 +47,11 @@ function ProjectCard({
         </div>
       </div>
       <p className="mb-3 font-normal text-gray-700">{desc}.</p>
-      <div className="flex flex-row w-full h-6 gap-2 my-3 text-cyan-600">{skills}</div>
+      <div className="flex flex-row w-full h-6 gap-2 my-3 text-cyan-600">
+        {skills?.map((skill, index) => (
+          <SkillsIconSwitcher name={skill} key={index} className="w-6 h-6" />
+        ))}
+      </div>
       <div className="flex flex-row items-center my-3">
         <div className="w-6 h-6 rounded-full bg-cyan-600 mr-">
           <img src={author?.imageUrl} alt="" />
