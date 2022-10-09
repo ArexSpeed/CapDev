@@ -5,7 +5,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 
 interface CardProps {
-  userId?: number;
+  userId?: string;
   name?: string;
   imageSrc?: string;
   position?: string;
