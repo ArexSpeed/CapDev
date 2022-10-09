@@ -10,6 +10,7 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
     case 'GET': {
       if (req.query.id) {
         const id = req.query.id.toString();
+        console.log('query id', id);
         const data = await getOneProject(id);
         res.json(data);
         break;

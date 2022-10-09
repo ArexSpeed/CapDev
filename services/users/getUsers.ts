@@ -2,6 +2,7 @@ import { connectToDb } from 'utils/mongodb';
 import { ObjectId } from 'mongodb';
 
 export const getOneUser = async (id: string) => {
+  console.log('id in service', id);
   const db = await connectToDb();
   const user = await db
     .collection('users')
