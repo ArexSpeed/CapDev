@@ -84,6 +84,10 @@ const ProjectsPage = () => {
         <section>
           <div className="grid w-full grid-cols-4 gap-4 pt-4">
             {projects
+              .filter((project) => {
+                if (selectSkill !== '') return project.skills?.indexOf(selectSkill) !== -1;
+                else return project;
+              })
               .filter((project) => project.category.includes(activeButton))
               ?.map((project, index) => (
                 <ProjectCard

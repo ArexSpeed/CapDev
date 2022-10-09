@@ -35,7 +35,7 @@ const CommunityPage = () => {
   const [selectSkill, setSelectSkill] = useState('');
   const [activeButton, setActiveButton] = useState('');
   const [users, setUsers] = useState<Users[]>([]);
-  const [checked, setChecked] = useState(false && null);
+  const [checked, setChecked] = useState(false);
   const { data: session } = useSession();
   const [currentUser, setCurrentUserData] = useState<Users>();
 
@@ -118,41 +118,51 @@ const CommunityPage = () => {
               })}
 
           {activeButton === 'Friends' &&
-            users?.map((user) => {
-              const friendName = checkFriend(user.name);
-              if (friendName) {
-                return (
-                  <CommunityCard
-                    key={user._id}
-                    name={user.name}
-                    openToWork={user.openToProject}
-                    position={user.position}
-                    skills={user.skills}
-                    langs={user.languages}
-                    socials={user.socials}
-                    imageUrl={user.imageUrl}
-                  />
-                );
-              }
-            })}
+            users
+              .filter((user) => {
+                if (selectSkill !== '') return user.skills?.indexOf(selectSkill) !== -1;
+                else return user;
+              })
+              ?.map((user) => {
+                const friendName = checkFriend(user.name);
+                if (friendName) {
+                  return (
+                    <CommunityCard
+                      key={user._id}
+                      name={user.name}
+                      openToWork={user.openToProject}
+                      position={user.position}
+                      skills={user.skills}
+                      langs={user.languages}
+                      socials={user.socials}
+                      imageUrl={user.imageUrl}
+                    />
+                  );
+                }
+              })}
           {activeButton === 'Followers' &&
-            users?.map((user) => {
-              const friendName = checkFollowers(user.name);
-              if (friendName) {
-                return (
-                  <CommunityCard
-                    key={user._id}
-                    name={user.name}
-                    openToWork={user.openToProject}
-                    position={user.position}
-                    skills={user.skills}
-                    langs={user.languages}
-                    socials={user.socials}
-                    imageUrl={user.imageUrl}
-                  />
-                );
-              }
-            })}
+            users
+              .filter((user) => {
+                if (selectSkill !== '') return user.skills?.indexOf(selectSkill) !== -1;
+                else return user;
+              })
+              ?.map((user) => {
+                const friendName = checkFollowers(user.name);
+                if (friendName) {
+                  return (
+                    <CommunityCard
+                      key={user._id}
+                      name={user.name}
+                      openToWork={user.openToProject}
+                      position={user.position}
+                      skills={user.skills}
+                      langs={user.languages}
+                      socials={user.socials}
+                      imageUrl={user.imageUrl}
+                    />
+                  );
+                }
+              })}
         </div>
       </div>
     </Layout>
