@@ -18,7 +18,7 @@ interface Props {
   logo?: string;
   link?: string;
   desc: string;
-  data: string;
+  date: string;
   skills?: string[];
   likes?: [];
 }
@@ -26,7 +26,7 @@ interface Props {
 function ProjectCard({
   author,
   category,
-  data,
+  date,
   desc,
   employees,
   likes,

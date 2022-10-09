@@ -22,7 +22,7 @@ type Projects = {
   logo: string;
   link: string;
   description: string;
-  data: string;
+  date: string;
   skills: string[];
   likes: User[];
 };
@@ -31,9 +31,10 @@ const ProjectsPage = () => {
   /*   const [session, loading] = useSession(); */
   const [searchValue, setSearchValue] = useState('');
   const [selectSkill, setSelectSkill] = useState(['']);
-  const [activeButton, setActiveButton] = useState('All projects');
+  const [activeButton, setActiveButton] = useState('');
   const [activeSubButton, setActiveSubButton] = useState('All projects');
   const [projects, setProjects] = useState<Projects[]>([]);
+  const [category, setCategory] = useState();
 
   useEffect(() => {
     const func = async () => {
@@ -84,15 +85,17 @@ const ProjectsPage = () => {
         />
         <section>
           <div className="grid w-full grid-cols-4 gap-4 pt-4">
-            {projects?.map((project, index) => (
-              <ProjectCard
-                category={project.category}
-                data={project.data}
-                desc={project.description}
-                title={project.title}
-                id={project._id}
-                key={index}></ProjectCard>
-            ))}
+            {projects
+              .filter((project) => project.category.includes(activeButton))
+              ?.map((project, index) => (
+                <ProjectCard
+                  category={project.category}
+                  date={project.date}
+                  desc={project.description}
+                  title={project.title}
+                  id={project._id}
+                  key={index}></ProjectCard>
+              ))}
           </div>
         </section>
       </div>
