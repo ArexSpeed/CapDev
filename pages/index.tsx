@@ -1,9 +1,7 @@
 import type { NextPage } from 'next';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Autoplay } from 'swiper';
-// Import Swiper styles
 import 'swiper/css';
-
 import RegisterForm from 'components/Forms/RegisterForm';
 import { useState } from 'react';
 import LoginForm from 'components/Forms/LoginForm';
@@ -15,6 +13,8 @@ import devops from '../assets/work/devops.webp';
 import rightimage from '../assets/work/right-image.webp';
 import SkillsIconSwitcher from 'components/IconsSwitcher/SkillsIconSwitcher';
 import { CommunityCard } from 'components/CommunityCard';
+import users from '../data/users.json';
+
 const Home: NextPage = () => {
   const [changeform, setChangeForm] = useState<boolean>(true);
 
@@ -116,6 +116,7 @@ const Home: NextPage = () => {
             <div className="flex flex-row h-[400px] w-full p-12">
               <div className="flex items-center w-1/2 h-full">
                 <Swiper
+                  spaceBetween={30}
                   direction={'vertical'}
                   autoplay={{
                     delay: 2500,
@@ -126,22 +127,20 @@ const Home: NextPage = () => {
                     clickable: true
                   }}
                   modules={[Autoplay]}
-                  className="w-full h-full mySwiper">
-                  <SwiperSlide className="flex items-center justify-center text-center bg-transparent">
-                    <CommunityCard />
-                  </SwiperSlide>
-                  <SwiperSlide className="flex items-center justify-center text-center bg-transparent">
-                    <CommunityCard />
-                  </SwiperSlide>
-                  <SwiperSlide className="items-center justify-center text-center bg-transparentflex">
-                    <CommunityCard />
-                  </SwiperSlide>
-                  <SwiperSlide className="flex items-center justify-center text-center bg-transparent">
-                    <CommunityCard />
-                  </SwiperSlide>
-                  <SwiperSlide className="flex items-center justify-center text-center bg-transparent">
-                    <CommunityCard />
-                  </SwiperSlide>
+                  className="w-full h-full">
+                  {users.map((user) => (
+                    <SwiperSlide key={user._id} className="bg-transparent ">
+                      <CommunityCard
+                        name={user.name}
+                        openToWork={user.openToProject}
+                        position={user.position}
+                        skills={user.skills}
+                        langs={user.languages}
+                        socials={user.socials}
+                        imageUrl={user.imageUrl}
+                      />
+                    </SwiperSlide>
+                  ))}
                 </Swiper>
               </div>
               <div className="flex items-center w-full h-full">
@@ -215,7 +214,7 @@ const Home: NextPage = () => {
           <div className="items-center h-full p-8 text-center">
             <div className="flex flex-col w-3/4 h-full p-12 m-auto">
               <div className="text-left text-7xl">
-                <h1>
+                <h1 className="mt-24">
                   Our <span className="text-blue">developers</span> have over
                   <span className="text-blue"> 50 </span>skills and technology
                 </h1>
