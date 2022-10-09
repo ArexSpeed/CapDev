@@ -2,9 +2,10 @@ import { Layout } from 'components/Layout';
 import React, { useEffect, useState } from 'react';
 import { TitleBox } from '../../components/TitleBox/TitleBox';
 import { SearchBox } from 'components/SerachBox/SearchBox';
-import SkillsTags from '../../components/SkillsTag/SkillsTag';
+import SkillsTags from '../../components/SkillsTags/SkillsTags';
 import ProjectCard from 'components/Projects/projectcard';
-import Buttons from 'components/Buttons/Buttons';
+import Button from 'components/Buttons/Button';
+import SubButton from 'components/Buttons/SubButton';
 /* import { useSession } from 'next-auth/client'; */
 
 const ProjectsPage = () => {
@@ -12,6 +13,7 @@ const ProjectsPage = () => {
   const [searchValue, setSearchValue] = useState('');
   const [selectSkill, setSelectSkill] = useState(['']);
   const [activeButton, setActiveButton] = useState('All projects');
+  const [activeSubButton, setActiveSubButton] = useState('All projects');
   useEffect(() => {});
   return (
     <Layout>
@@ -35,7 +37,7 @@ const ProjectsPage = () => {
         <section className="w-full bg-white rounded-lg">
           <SkillsTags selectSkill={selectSkill} setSelectSkill={setSelectSkill} />
         </section>
-        <Buttons
+        <Button
           activeButton={activeButton}
           setActiveButton={setActiveButton}
           value1="All projects"
@@ -44,7 +46,13 @@ const ProjectsPage = () => {
           value4="Your"
           value5="Favorite"
         />
-        <div></div>
+        <SubButton
+          activeSubButton={activeSubButton}
+          setActiveSubButton={setActiveSubButton}
+          value1="Latest"
+          value2="Best"
+        />
+        <section></section>
         <ProjectCard></ProjectCard>
       </div>
     </Layout>
