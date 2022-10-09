@@ -5,7 +5,9 @@ import React from "react";
 
 const ProfileEditPage = () => {
  return <Layout>
-    <ProfileForm name="Edit your profile"/>
+  <div className="flex bg-white p-8 mx-auto my-5 rounded-lg">
+  <ProfileForm/>
+  </div>
   </Layout>
  
 };
