@@ -26,16 +26,16 @@ type Users = {
   imageUrl?: string;
   position?: string;
   languages?: [];
-  skills?: [];
+  skills?: [string];
   socials: [];
 };
 
 const CommunityPage = () => {
   const [searchValue, setSearchValue] = useState('');
-  const [selectSkill, setSelectSkill] = useState(['']);
+  const [selectSkill, setSelectSkill] = useState('');
   const [activeButton, setActiveButton] = useState('');
   const [users, setUsers] = useState<Users[]>([]);
-  const [checked, setChecked] = useState(false);
+  const [checked, setChecked] = useState(false && null);
   const { data: session } = useSession();
   const [currentUser, setCurrentUserData] = useState<Users>();
 
@@ -46,7 +46,6 @@ const CommunityPage = () => {
     };
     func();
   }, []);
-
   useEffect(() => {
     const currentUser = users.find((user) => user.name === session?.user.name);
     if (currentUser) setCurrentUserData(currentUser);
@@ -98,6 +97,10 @@ const CommunityPage = () => {
         <div className="grid w-full grid-cols-4 gap-4 pt-4 ">
           {activeButton === '' &&
             users
+              .filter((user) => {
+                if (selectSkill !== '') return user.skills?.indexOf(selectSkill) !== -1;
+                else return user;
+              })
               .filter((user) => user.openToProject === checked)
               ?.map((user) => {
                 return (
