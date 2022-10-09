@@ -22,7 +22,7 @@ const Buttons = ({
   value5
 }: ButtonsProps) => {
   return (
-    <section className="flex w-full mt-4 mb-3 gap-11 text-20 ">
+    <section className="flex w-full mt-4 mb-3 gap-11 text-20">
       <motion.button
         animate={{ opacity: 1, scale: 1 }}
         initial={{ opacity: 0, scale: 0 }}

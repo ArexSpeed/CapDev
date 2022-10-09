@@ -3,7 +3,6 @@ import { HtmlIcon, JavaScriptIcon, ReactIcon } from 'components/Icons/SkillsIcon
 import { FacebookIcon, LinkedinIcon, TwitterIcon } from 'components/Icons/SocialIcons';
 
 interface CardProps {
-  id?: number;
   name?: string;
   imageSrc?: string;
   position?: string;
@@ -16,7 +15,6 @@ interface CardProps {
 }
 
 export const CommunityCard = ({
-  id,
   name,
   imageSrc,
   position,
