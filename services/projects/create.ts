@@ -14,7 +14,7 @@ interface Payload {
   logo: string;
   link: string;
   description: string;
-  data: string;
+  date: string;
   skills: string[];
   likes: User[];
 }
@@ -22,7 +22,7 @@ interface Payload {
 const createProject = async (payload: Payload) => {
   const db = await connectToDb();
   // eslint-disable-next-line prettier/prettier
-  const { author, employees, title, category, logo, link, description, data, skills, likes } =
+  const { author, employees, title, category, logo, link, description, date, skills, likes } =
     payload;
   const project = await db.collection('projects').insertOne({
     author,
@@ -32,7 +32,7 @@ const createProject = async (payload: Payload) => {
     logo,
     link,
     description,
-    data,
+    date,
     skills,
     likes: []
   });
