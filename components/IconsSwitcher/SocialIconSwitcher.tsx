@@ -9,10 +9,10 @@ import {
 
 interface Props {
   name: string;
-  className: string;
+  className?: string;
 }
 
-const SocialIconSwitcher = ({ name, className }: Props) => {
+const SocialIconSwitcher = ({ name, className }: Props): JSX.Element => {
   switch (name) {
     case 'website':
       return <WebsiteIcon className={className} />;
@@ -27,7 +27,7 @@ const SocialIconSwitcher = ({ name, className }: Props) => {
     case 'dribbble':
       return <DribbbleIcon className={className} />;
     default:
-      return '';
+      return <WebsiteIcon className={className} />;
   }
 };
 

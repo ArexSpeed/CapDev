@@ -23,7 +23,7 @@ import {
 
 interface Props {
   name: string;
-  className: string;
+  className?: string;
 }
 
 const SkillsIconSwitcher = ({ name, className }: Props): JSX.Element => {

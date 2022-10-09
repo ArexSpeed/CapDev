@@ -7,6 +7,8 @@ import { CommunityCard } from 'components/CommunityCard';
 import { CommunityButtons } from 'components/Buttons/CommunityButtons';
 import SkillsTags from 'components/SkillsTags/SkillsTags';
 
+import users from '../../data/users.json';
+
 const formInput =
   'h-10 w-[300px] p-2 bg-transparent bg-primary border border-secondary rounded-md outline-none';
 
@@ -17,7 +19,7 @@ const CommunityPage = () => {
 
   return (
     <Layout>
-      <div className="flex flex-col p-8">
+      <div className="flex w-full flex-col p-8">
         <PageTitle pageTitle="Community" />
         <div className="flex">
           <SearchBox
@@ -54,16 +56,18 @@ const CommunityPage = () => {
           value4="Projects"
         />
         <div className="grid w-full grid-cols-4 gap-4 pt-4 ">
-          <CommunityCard
-            openToWork={true}
-            name="Arek"
-            imageSrc=""
-            position="Full stack developer"
-          />
-          <CommunityCard name="Seba" imageSrc="" position="DevOoops developer" />
-          <CommunityCard openToWork={true} name="Wojtek" imageSrc="" position="Cofie developer" />
-          <CommunityCard name="Dima" imageSrc="" position="Frontend developer" />
-          <CommunityCard openToWork={true} name="Marcin" imageSrc="" position="Security" />
+          {users.map((user) => (
+            <CommunityCard
+              key={user.userid}
+              name={user.name}
+              openToWork={user.openToProject}
+              position={user.position}
+              skills={user.skills}
+              langs={user.languages}
+              socials={user.socials}
+              imageUrl={user.imageUrl}
+            />
+          ))}
         </div>
       </div>
     </Layout>
