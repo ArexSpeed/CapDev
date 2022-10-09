@@ -47,17 +47,12 @@ const CommunityPage = () => {
     func();
   }, []);
 
-  console.log(session);
   useEffect(() => {
     const currentUser = users.find((user) => user.name === session?.user.name);
     if (currentUser) setCurrentUserData(currentUser);
   }, [users]);
 
-  console.log({ users });
-
   const checkFriend = (name: string) => {
-    //currentUser.find((user) => user.name === name);
-    console.log({ currentUser });
     return currentUser?.friends?.find((user) => user === name);
   };
   const checkFollowers = (name: string) => {
