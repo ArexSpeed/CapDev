@@ -53,7 +53,7 @@ const CommunityPage = () => {
     if (currentUser) setCurrentUserData(currentUser);
   }, [users]);
 
-  // console.log({ users });
+  console.log({ users });
 
   const checkFriend = (name: string) => {
     //currentUser.find((user) => user.name === name);
@@ -102,20 +102,22 @@ const CommunityPage = () => {
         <CommunityButtons activeButton={activeButton} setActiveButton={setActiveButton} />
         <div className="grid w-full grid-cols-4 gap-4 pt-4 ">
           {activeButton === '' &&
-            users?.map((user) => {
-              return (
-                <CommunityCard
-                  key={user._id}
-                  name={user.name}
-                  openToWork={user.openToProject}
-                  position={user.position}
-                  skills={user.skills}
-                  langs={user.languages}
-                  socials={user.socials}
-                  imageUrl={user.imageUrl}
-                />
-              );
-            })}
+            users
+              .filter((user) => user.openToProject === checked)
+              ?.map((user) => {
+                return (
+                  <CommunityCard
+                    key={user._id}
+                    name={user.name}
+                    openToWork={user.openToProject}
+                    position={user.position}
+                    skills={user.skills}
+                    langs={user.languages}
+                    socials={user.socials}
+                    imageUrl={user.imageUrl}
+                  />
+                );
+              })}
 
           {activeButton === 'Friends' &&
             users?.map((user) => {
