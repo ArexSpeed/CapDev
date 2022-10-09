@@ -32,13 +32,13 @@ export const CommunityCard = ({
     <div className="w-full p-6 bg-white rounded-lg shadow-sm">
       <div className="flex justify-end w-full h-4 gap-2 ml-auto">
         {langs?.map((lang, i) => (
-          <FlagIconSwitcher key={i} country={lang} className="" />
+          <FlagIconSwitcher key={i} country={lang} />
         ))}
       </div>
       <div className="mb-2 text-gray-900">
         <div className="flex flex-row items-center">
           {imageUrl ? (
-            <div className="flex  h-[70px] w-[70px] mr-3 ">
+            <div className="flex h-[70px] w-[70px] mr-3 ">
               <Image
                 objectFit="contain"
                 width={70}
