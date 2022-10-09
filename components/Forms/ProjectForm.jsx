@@ -60,6 +60,7 @@ const ProjectForm = () => {
       skills: [checkedSkills],
       likes: []
     };
+    console.log('Payload project', payload);
 
     if (form.get('logo').name !== '') {
       const picture = form.get('logo');
@@ -74,7 +75,7 @@ const ProjectForm = () => {
         'Content-Type': 'application/json'
       }
     });
-
+    console.log('res', response);
     if (response.ok) {
       setFormProcessing(false);
       router.push('/projects');
