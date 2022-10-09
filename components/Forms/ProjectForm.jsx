@@ -1,5 +1,5 @@
 import React, { useState, useRef } from 'react';
-//import { useSession } from 'next-auth/react';
+import { useSession } from 'next-auth/react';
 import { useRouter } from 'next/router';
 import { uploadImage } from 'utils/uploadImage';
 import SkillsIconSwitcher from 'components/IconsSwitcher/SkillsIconSwitcher';
@@ -16,7 +16,7 @@ const formTextarea =
   'h-20 w-full px-2 bg-transparent border border-secondary rounded-md outline-none';
 
 const ProjectForm = () => {
-  //const { data: session } = useSession();
+  const { data: session } = useSession();
   const router = useRouter();
   const projectForm = useRef(null);
   const [error, setError] = useState();
@@ -45,13 +45,10 @@ const ProjectForm = () => {
     setError(null);
     setFormProcessing(true);
     const form = new FormData(projectForm.current);
-    const author = {
-      id: '1',
-      name: 'Arek Cichocki',
-      imageUrl: ''
-    };
     const payload = {
-      author,
+      author: {
+        name: session.user.name
+      },
       employees: [],
       title: form.get('title'),
       category: form.get('category'),

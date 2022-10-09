@@ -139,7 +139,7 @@ const RegisterForm = () => {
           </select>
         </div>
         <button type="submit" className={formButton}>
-          Create account
+          {formProcessing ? 'Loading...' : 'Create account'}
         </button>
       </form>
     </motion.div>
