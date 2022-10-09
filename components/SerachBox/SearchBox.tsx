@@ -9,7 +9,7 @@ interface SearchBoxProps {
 
 export const SearchBox = ({ searchValue, setSearchValue, placeholder }: SearchBoxProps) => {
   return (
-    <div className="flex flex-row items-center w-full rounded-lg bg-primary ">
+    <div className="flex flex-row items-center w-full h-10 rounded-lg bg-primary ">
       <div className="flex items-center content-center border-r-[2px] border-r-secondary border-solid px-2 ">
         <SearchIcon />
       </div>

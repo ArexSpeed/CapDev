@@ -24,7 +24,7 @@ type Projects = {
   description: string;
   date: string;
   skills: string[];
-  likes: User[];
+  likes: string[];
 };
 
 const ProjectsPage = () => {
@@ -39,6 +39,7 @@ const ProjectsPage = () => {
     const func = async () => {
       const getProjects = await axios.get('/api/projects');
       setProjects(getProjects.data);
+      console.log(projects);
     };
     func();
   }, []);
@@ -86,12 +87,18 @@ const ProjectsPage = () => {
               .filter((project) => project.category.includes(activeButton))
               ?.map((project, index) => (
                 <ProjectCard
+                  author={project.author}
                   category={project.category}
                   date={project.date}
                   desc={project.description}
                   title={project.title}
                   id={project._id}
-                  key={index}></ProjectCard>
+                  key={index}
+                  likes={project.likes}
+                  skills={project.skills}
+                  logo={project.logo}
+                  link={project.link}
+                />
               ))}
           </div>
         </section>
