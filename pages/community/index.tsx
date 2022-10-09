@@ -19,7 +19,7 @@ const CommunityPage = () => {
 
   return (
     <Layout>
-      <div className="flex w-full flex-col p-8">
+      <div className="flex flex-col w-full p-8">
         <PageTitle pageTitle="Community" />
         <div className="flex">
           <SearchBox
@@ -59,6 +59,7 @@ const CommunityPage = () => {
           {users.map((user) => (
             <CommunityCard
               key={user.userid}
+              userId={user.userid}
               name={user.name}
               openToWork={user.openToProject}
               position={user.position}
