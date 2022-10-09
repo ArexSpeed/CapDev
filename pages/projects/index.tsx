@@ -4,10 +4,28 @@ import { TitleBox } from '../../components/TitleBox/TitleBox';
 import { SearchBox } from 'components/SerachBox/SearchBox';
 import SkillsTags from '../../components/SkillsTags/SkillsTags';
 import ProjectCard from 'components/Projects/projectcard';
-import Button from 'components/Buttons/Button';
 import SubButton from 'components/Buttons/SubButton';
 import Buttons from 'components/Buttons/Buttons';
+import axios from 'axios';
 /* import { useSession } from 'next-auth/client'; */
+type User = {
+  id: string;
+  name: string;
+  imageUrl: string;
+};
+type Projects = {
+  _id: string;
+  author: User;
+  employees: User[];
+  title: string;
+  category: string;
+  logo: string;
+  link: string;
+  description: string;
+  data: string;
+  skills: string[];
+  likes: User[];
+};
 
 const ProjectsPage = () => {
   /*   const [session, loading] = useSession(); */
@@ -15,7 +33,18 @@ const ProjectsPage = () => {
   const [selectSkill, setSelectSkill] = useState(['']);
   const [activeButton, setActiveButton] = useState('All projects');
   const [activeSubButton, setActiveSubButton] = useState('All projects');
-  useEffect(() => {});
+  const [projects, setProjects] = useState<Projects[]>([]);
+
+  useEffect(() => {
+    const func = async () => {
+      const getProjects = await axios.get('/api/projects');
+      setProjects(getProjects.data);
+    };
+    func();
+  }, []);
+
+  console.log({ projects });
+
   return (
     <Layout>
       <div className="font-roboto flex flex-col w-full h-full p-4 bg-[#E5E5E5] ">
@@ -53,8 +82,19 @@ const ProjectsPage = () => {
           value1="Latest"
           value2="Best"
         />
-        <section></section>
-        <ProjectCard></ProjectCard>
+        <section>
+          <div className="grid w-full grid-cols-4 gap-4 pt-4">
+            {projects?.map((project, index) => (
+              <ProjectCard
+                category={project.category}
+                data={project.data}
+                desc={project.description}
+                title={project.title}
+                id={project._id}
+                key={index}></ProjectCard>
+            ))}
+          </div>
+        </section>
       </div>
     </Layout>
   );
