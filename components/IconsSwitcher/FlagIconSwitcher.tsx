@@ -9,10 +9,10 @@ import {
 
 interface Props {
   country: string;
-  className: string;
+  className?: string;
 }
 
-const FlagIconSwitcher = ({ country, className }: Props) => {
+const FlagIconSwitcher = ({ country, className }: Props): JSX.Element => {
   switch (country) {
     case 'pl':
       return <PolandIcon className={className} />;
@@ -27,7 +27,7 @@ const FlagIconSwitcher = ({ country, className }: Props) => {
     case 'it':
       return <ItalyIcon className={className} />;
     default:
-      return '';
+      return <PolandIcon className={className} />;
   }
 };
 
