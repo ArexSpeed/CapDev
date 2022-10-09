@@ -38,7 +38,7 @@ const CommunityPage = () => {
   const [checked, setChecked] = useState(false);
   const { data: session } = useSession();
   const [currentUser, setCurrentUserData] = useState<Users>();
-
+  const [developerPosition, setDeveloperPosition] = useState('');
   useEffect(() => {
     const func = async () => {
       const getUsers = await axios.get('/api/users');
@@ -68,7 +68,7 @@ const CommunityPage = () => {
             setSearchValue={setSearchValue}
             placeholder="Find a developer"
           />
-          <select className={formInput}>
+          <select className={formInput} onChange={(e) => setDeveloperPosition(e.target.value)}>
             <option value="Frontend Developer">Frontend Developer</option>
             <option value="Backend Developer">Backend Developer</option>
             <option value="Fullstack Developer">Fullstack Developer</option>
@@ -103,6 +103,7 @@ const CommunityPage = () => {
               })
               .filter((user) => user.openToProject === checked)
               .filter((user) => user.name?.toLowerCase().includes(searchValue.toLowerCase()))
+              .filter((user) => user?.position?.includes(developerPosition))
               ?.map((user) => {
                 return (
                   <CommunityCard
@@ -125,6 +126,7 @@ const CommunityPage = () => {
                 else return user;
               })
               .filter((user) => user.name?.toLowerCase().includes(searchValue.toLowerCase()))
+              .filter((user) => user?.position?.includes(developerPosition))
               ?.map((user) => {
                 const friendName = checkFriend(user.name);
                 if (friendName) {
@@ -151,6 +153,7 @@ const CommunityPage = () => {
                 else return user;
               })
               .filter((user) => user.name?.toLowerCase().includes(searchValue.toLowerCase()))
+              .filter((user) => user?.position?.includes(developerPosition))
               ?.map((user) => {
                 const friendName = checkFollowers(user.name);
                 if (friendName) {
