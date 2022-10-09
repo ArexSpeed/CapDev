@@ -1,12 +1,19 @@
-function Education() {
-    return (
-        <div className="flex bg-white rounded-md justify-evenly h-12 w-3/4 items-center my-3">
-        <div>Date</div>
-        <div>University</div>
-        <div>Department</div>
-        <div>Field</div>
-        </div>
-    );
-  }
-  
-  export default Education;
+interface EduProps {
+  date?: string;
+  university?: string;
+  department?: string;
+  field?: string;
+}
+
+function Education({ date, university, department, field }: EduProps) {
+  return (
+    <div className="flex items-center w-3/4 h-12 my-3 bg-white rounded-md justify-evenly">
+      <div>{date}</div>
+      <div>{university}</div>
+      <div>{department}</div>
+      <div>{field}</div>
+    </div>
+  );
+}
+
+export default Education;

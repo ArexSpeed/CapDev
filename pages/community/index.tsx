@@ -105,6 +105,7 @@ const CommunityPage = () => {
               ?.map((user) => {
                 return (
                   <CommunityCard
+                    userId={user._id}
                     key={user._id}
                     name={user.name}
                     openToWork={user.openToProject}
@@ -124,6 +125,7 @@ const CommunityPage = () => {
                 return (
                   <CommunityCard
                     key={user._id}
+                    userId={user._id}
                     name={user.name}
                     openToWork={user.openToProject}
                     position={user.position}
@@ -141,6 +143,7 @@ const CommunityPage = () => {
               if (friendName) {
                 return (
                   <CommunityCard
+                    userId={user._id}
                     key={user._id}
                     name={user.name}
                     openToWork={user.openToProject}

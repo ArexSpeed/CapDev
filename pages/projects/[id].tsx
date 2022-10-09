@@ -79,16 +79,23 @@ const ProjectOneSite: NextPage<Props> = ({ projectProp }) => {
             <div className="flex flex-col">
               <div className="flex h-12 my-1">
                 <div className="flex flex-row items-center gap-4 bg-white rounded-lg">
-                  <div className="p-2">User Name</div>
+                  <div className="p-2">Marcin Domagała</div>
                   <div className="p-2">Frontend Developer</div>
                   <div className="p-2">Junior</div>
                 </div>
               </div>
               <div className="flex h-12 my-1">
                 <div className="flex flex-row items-center gap-4 bg-white rounded-lg">
-                  <div className="p-2">User Name</div>
-                  <div className="p-2">Frontend Developer</div>
-                  <div className="p-2">Junior</div>
+                  <div className="p-2">Arek Cichocki</div>
+                  <div className="p-2">Fullstack Developer</div>
+                  <div className="p-2">Senior</div>
+                </div>
+              </div>
+              <div className="flex h-12 my-1">
+                <div className="flex flex-row items-center gap-4 bg-white rounded-lg">
+                  <div className="p-2">Dima Zaichenko</div>
+                  <div className="p-2">Fullstack Developer</div>
+                  <div className="p-2">Middle</div>
                 </div>
               </div>
             </div>
