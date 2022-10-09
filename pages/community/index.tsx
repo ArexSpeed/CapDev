@@ -140,6 +140,8 @@ const CommunityPage = () => {
                       imageUrl={user.imageUrl}
                     />
                   );
+                } else {
+                  <span>No data found</span>;
                 }
               })}
           {activeButton === 'Followers' &&
@@ -164,6 +166,8 @@ const CommunityPage = () => {
                       imageUrl={user.imageUrl}
                     />
                   );
+                } else {
+                  <span>No data found</span>;
                 }
               })}
         </div>
