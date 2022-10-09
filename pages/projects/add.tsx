@@ -5,7 +5,9 @@ import React from 'react';
 const AddprojectPage = () => {
   return (
     <Layout>
-      <ProjectForm />
+      <div className="flex justify-center w-full p-4">
+        <ProjectForm />
+      </div>
     </Layout>
   );
 };

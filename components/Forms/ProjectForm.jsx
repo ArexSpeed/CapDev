@@ -12,6 +12,8 @@ const formLabel = 'py-1';
 const formInput = 'h-10 w-full px-2 bg-transparent border border-secondary rounded-md outline-none';
 const formButton =
   'w-full h-10 border-none font-bold text-white bg-blue rounded-md hover:bg-lightblue ease-in duration-300';
+const formTextarea =
+  'h-20 w-full px-2 bg-transparent border border-secondary rounded-md outline-none';
 
 const ProjectForm = () => {
   //const { data: session } = useSession();
@@ -57,7 +59,7 @@ const ProjectForm = () => {
       link: form.get('link'),
       description: form.get('description'),
       data: '10.10.10',
-      skills: [checkedSkills],
+      skills: checkedSkills,
       likes: []
     };
     console.log('Payload project', payload);
@@ -128,13 +130,17 @@ const ProjectForm = () => {
         <label htmlFor="category" className={formLabel}>
           Category
         </label>
-        <input
-          className={formInput}
-          type="text"
-          name="category"
-          placeholder="Enter your category name"
-          required
-        />
+        <select className={formInput} name="category">
+          <option value="">Category of project</option>
+          <option value="Single">Single project</option>
+          <option value="Company">Company project</option>
+        </select>
+      </div>
+      <div className={formField}>
+        <label htmlFor="employees" className={formLabel}>
+          Employees
+        </label>
+        <input className={formInput} type="text" name="employees" placeholder="Employee name" />
       </div>
       <div className={formField}>
         <label htmlFor="link" className={formLabel}>
@@ -153,39 +159,38 @@ const ProjectForm = () => {
           Description
         </label>
         <textarea
-          className="form__textarea"
+          className={formTextarea}
           name="description"
           placeholder="Write a couple words about this project"
         />
       </div>
       <div className={formField}>
-        <label htmlFor="technology" className={formLabel}>
-          Technology
+        <label htmlFor="skills" className={formLabel}>
+          Skills
         </label>
-        <div className="skillstags" style={{ marginBottom: '16px' }}>
+        <div className="" style={{ marginBottom: '16px' }}>
           {skillsArray.map((skill, i) => (
             <button
               type="button"
               key={i}
-              className={`skillstags__button ${
-                checkedSkills.find((item) => item === skill) ? 'active' : ''
+              className={`p-2 rounded-md mx-1 ${
+                checkedSkills.find((item) => item === skill) ? 'bg-blue' : ''
               }`}
               onClick={() => checkSkill(skill)}>
               <div>
                 <SkillsIconSwitcher
                   name={skill}
-                  className={`icon-large ${
-                    checkedSkills.find((item) => item === skill) ? 'primary-white' : 'primary-blue'
+                  className={`w-6 h-6 ${
+                    checkedSkills.find((item) => item === skill) ? 'text-white' : 'text-blue'
                   }`}
                 />
               </div>
-              <span>{skill}</span>
             </button>
           ))}
         </div>
       </div>
       <button type="submit" className={formButton}>
-        Submit
+        {formProcessing ? 'Processing... ' : 'Submit'}
       </button>
     </form>
   );
