@@ -3,6 +3,7 @@ import SocialIconSwitcher from '../components/IconsSwitcher/SocialIconSwitcher';
 import SkillsIconSwitcher from '../components/IconsSwitcher/SkillsIconSwitcher';
 import Link from 'next/link';
 import Image from 'next/image';
+import { useState } from 'react';
 
 interface CardProps {
   userId?: string;
@@ -28,6 +29,8 @@ export const CommunityCard = ({
   socials,
   openToWork
 }: CardProps) => {
+  const [follow, isFollow] = useState<boolean>(false);
+
   return (
     <div className="flex flex-col w-full p-6 bg-white rounded-lg shadow-sm">
       <div className="flex justify-end w-full h-4 gap-2 ml-auto">
@@ -71,8 +74,17 @@ export const CommunityCard = ({
         <button className="bg-[#F3F3F3] rounded w-[105px] h-[24px]">
           <Link href={`/profile/${userId}`}>Profile</Link>
         </button>
-
-        <button className="bg-[#17ABDB] rounded w-[105px] h-[24px]">Follow</button>
+        {follow ? (
+          <button className="bg-green rounded w-[105px] h-[24px]" onClick={() => isFollow(!follow)}>
+            Unfollow
+          </button>
+        ) : (
+          <button
+            className="bg-[#17ABDB] rounded w-[105px] h-[24px]"
+            onClick={() => isFollow(!follow)}>
+            Follow
+          </button>
+        )}
       </div>
       <div className="flex items-center justify-between ">
         {openToWork ? (

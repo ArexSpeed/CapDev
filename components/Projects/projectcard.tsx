@@ -1,8 +1,9 @@
-import { HeartIcon } from 'components/Icons/FontIcons';
+import { HeartIcon, HeartOutlineIcon } from 'components/Icons/FontIcons';
 import { WebsiteIcon } from 'components/Icons/SocialIcons';
 import SkillsIconSwitcher from 'components/IconsSwitcher/SkillsIconSwitcher';
 import Image from 'next/image';
 import Link from 'next/link';
+import { useState } from 'react';
 
 type User = {
   id: string;
@@ -37,6 +38,17 @@ function ProjectCard({
   title,
   id
 }: Props) {
+  const [follow, isFollow] = useState<boolean>(false);
+  const [like, isLike] = useState<number>(0);
+
+  const handleFollow = () => {
+    isFollow(!follow);
+    if (follow) {
+      isLike(like + 1);
+    } else {
+      isLike(like - 1);
+    }
+  };
   return (
     <div className="flex flex-col justify-between max-w-sm p-6 bg-white border border-gray-200 rounded-lg shadow-m">
       <div className="mb-2 text-gray-900">
@@ -72,10 +84,10 @@ function ProjectCard({
       </div>
       <div className="flex justify-between ">
         <div className="flex">
-          <button className="absolute w-6 h-6 text-cyan-600">
-            <HeartIcon />
+          <button className="absolute w-6 h-6 text-cyan-600" onClick={handleFollow}>
+            {follow ? <HeartOutlineIcon /> : <HeartIcon />}
             <div className="w-4 h-4 bg-[#95E616] rounded-full text-xs text-gray absolute bottom-[-5px] right-[-5px]">
-              {likes?.length}
+              {like}
             </div>
           </button>
         </div>
