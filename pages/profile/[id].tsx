@@ -133,24 +133,30 @@ const ProfileId: NextPage<Props> = ({ userProp }) => {
           <div className="flex flex-wrap w-full gap-x-10 gap-y-10">
             <ProjectCard
               id="1"
-              title="AXA"
+              title="Word"
               category="Single"
-              desc="Lorem ipsum"
+              desc="Microsoft project for capgemini developers"
               date="07-10-2018"
+              logo="https://res.cloudinary.com/dbpsxmtcb/image/upload/v1649160947/cjk8esmlcw8kgn96jkjm.png"
+              skills={['javascript', 'html', 'react']}
             />
             <ProjectCard
-              id="1"
-              title="AXA"
+              id="2"
+              title="RedBull"
               category="Single"
-              desc="Lorem ipsum"
+              desc="Project for the biggest energy and sport company"
               date="07-10-2018"
+              logo="https://res.cloudinary.com/dbpsxmtcb/image/upload/v1649161275/brqwggtjehbqa9lo3ovo.png"
+              skills={['csharp', 'css', 'java']}
             />
             <ProjectCard
-              id="1"
-              title="AXA"
+              id="3"
+              title="Multiword"
               category="Single"
-              desc="Lorem ipsum"
+              desc="Own project for learning languages"
               date="07-10-2018"
+              logo="https://res.cloudinary.com/dbpsxmtcb/image/upload/v1649159187/lglxametaupdrpahsk4q.png"
+              skills={['react', 'next', 'tailwind']}
             />
           </div>
         </div>

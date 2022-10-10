@@ -44,9 +44,9 @@ function ProjectCard({
   const handleFollow = () => {
     isFollow(!follow);
     if (follow) {
-      isLike(like + 1);
-    } else {
       isLike(like - 1);
+    } else {
+      isLike(like + 1);
     }
   };
   return (
