@@ -61,9 +61,13 @@ export const CommunityCard = ({
         </div>
       </div>
       <span className="mb-3 font-normal text-gray-700">Main Skills</span>
-      <div className="flex flex-row w-full h-6 gap-2 my-3 text-cyan-600">
+      <div className="flex flex-row justify-start w-full h-6 my-3 ">
         {skills?.map((skill, i) => (
-          <SkillsIconSwitcher key={i} name={skill} className="icon-medium secondary-blue" />
+          <SkillsIconSwitcher
+            key={i}
+            name={skill}
+            className="w-6 h-6 mx-1 icon-medium text-cyan-600"
+          />
         ))}
       </div>
       <div className="flex items-center justify-between w-full my-3">
