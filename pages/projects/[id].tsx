@@ -33,7 +33,9 @@ const ProjectOneSite: NextPage<Props> = ({ projectProp }) => {
     <Layout>
       <div className="w-full p-8">
         <div className="flex flex-row justify-between w-full">
-          <div className="flex min-h-[256px] min-w-[256px] bg-blue rounded-lg"></div>
+          <div className="flex min-h-[256px] min-w-[256px] bg-blue rounded-lg">
+            {<img src={project?.logo} className="flex h-[256px] w-[256px] object-contain" alt="" />}
+          </div>
           <div className="flex flex-col self-center ml-8 mr-auto">
             <h1 className="font-bold border-b-8 border-b-solid border-b-green text-32 w-[40%]">
               {project?.title}
